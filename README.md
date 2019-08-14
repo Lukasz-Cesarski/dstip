@@ -16,3 +16,9 @@ August 2019
 05. Matplotlib
 06. Seaborn
 07. scikit-learn
+
+Course based on: Jake VanderPlas "Python Data Science Handbook"
+
+References:
+
+1. https://jakevdp.github.io/PythonDataScienceHandbook/
