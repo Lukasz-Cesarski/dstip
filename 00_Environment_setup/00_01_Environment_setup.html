@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>02_01_Jupyter_Notebook</title>
+<title>00_01_Environment_setup</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,9 +13116,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/01.png"></p>
-<h1 id="01.-Jupyter-Notebook">01. Jupyter Notebook<a class="anchor-link" href="#01.-Jupyter-Notebook">&#182;</a></h1><h2 id="01.01-What-is-Jupyter-Notebook?">01.01 What is Jupyter Notebook?<a class="anchor-link" href="#01.01-What-is-Jupyter-Notebook?">&#182;</a></h2><h4 id="According-to-Jupyter-Notebook-website:-https://jupyter.org">According to Jupyter Notebook website: <a href="https://jupyter.org">https://jupyter.org</a><a class="anchor-link" href="#According-to-Jupyter-Notebook-website:-https://jupyter.org">&#182;</a></h4><p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p>
-<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>The Jupyter notebook is a <strong>browser-based graphical interface to the IPython shell</strong>, and builds on it a rich set of dynamic display capabilities. As well as executing Python/IPython statements, the notebook allows the user to include formatted text, static and dynamic visualizations, mathematical equations, JavaScript widgets, and much more. Furthermore, these documents can be saved in a way that lets other people open them and execute the code on their own systems.</p>
+<h1 id="01.-Environment-setup">01. Environment setup<a class="anchor-link" href="#01.-Environment-setup">&#182;</a></h1><h2 id="01.1-Install-python">01.1 Install <code>python</code><a class="anchor-link" href="#01.1-Install-python">&#182;</a></h2><p>I recommend using <code>python3.6</code> or <code>python3.7</code> in this tutorial. We will focus ONLY on <code>python</code> on <code>Linux/UNIX</code>. We will not consider other OS like <code>Windows</code>, <code>Mac OS X</code>.</p>
+<p>to install <code>python</code> run:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install python3
+</pre></div>
 
 </div>
 </div>
@@ -13126,7 +13127,153 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.02-Basic-Jupyter-Notebook-fuctionalities">01.02 Basic Jupyter Notebook fuctionalities<a class="anchor-link" href="#01.02-Basic-Jupyter-Notebook-fuctionalities">&#182;</a></h2><h3 id="01.02.01-Code-cells">01.02.01 Code cells<a class="anchor-link" href="#01.02.01-Code-cells">&#182;</a></h3><p>This is basic functionality when you execute code</p>
+<h2 id="01.2-Virtual-Environment-via-virtualenv">01.2 Virtual Environment via <code>virtualenv</code><a class="anchor-link" href="#01.2-Virtual-Environment-via-virtualenv">&#182;</a></h2><p>It is a good python practice to use separate virtual environment for every project. There is a great tutorial about Virtual Environments <a href="https://docs.python-guide.org/dev/virtualenvs/">https://docs.python-guide.org/dev/virtualenvs/</a>. I highly recommend to familiarize yourself with it as an introduction. The part we are interested in is:</p>
+<blockquote><p>Lower level: virtualenv<br>
+.<br>
+.<br>
+.<br>
+virtualenvwrapper</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="01.2.1-Check-your-version-of-python">01.2.1 Check your version of <code>python</code><a class="anchor-link" href="#01.2.1-Check-your-version-of-python">&#182;</a></h3><p>In shell:</p>
+<div class="highlight"><pre><span></span>python
+</pre></div>
+<blockquote><p>Python 3.6.8 (default, Jan 14 2019, 11:02:34)<br>
+[GCC 8.0.1 20180414 (experimental) [trunk revision 259383]] on linux<br>
+Type "help", "copyright", "credits" or "license" for more information.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="nb">exit</span><span class="p">()</span>
+</pre></div>
+<p>In our case we have <code>python3.6</code> which is OK. If the python version is not satysfying for you, then find the desired binary file:</p>
+<div class="highlight"><pre><span></span>which python
+</pre></div>
+<blockquote><p>/usr/bin/python2.7</p>
+</blockquote>
+<div class="highlight"><pre><span></span>ls /usr/bin/ <span class="p">|</span> grep python
+</pre></div>
+<blockquote><p>python<br>
+python2<br>
+python2.7<br>
+python3<br>
+python3.6<br>
+python3.6m<br>
+python3m</p>
+</blockquote>
+<p>if you choose eg. <code>python3.6</code> the binary file is <code>/usr/bin/python3.6</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="01.2.2-Install-virtualenv">01.2.2 Install <code>virtualenv</code><a class="anchor-link" href="#01.2.2-Install-virtualenv">&#182;</a></h3><p>Package: <a href="https://pypi.org/project/virtualenv/">https://pypi.org/project/virtualenv/</a></p>
+<p>Documentation: <a href="https://virtualenv.pypa.io/en/latest/">https://virtualenv.pypa.io/en/latest/</a></p>
+<p>Run:</p>
+<div class="highlight"><pre><span></span>pip install virtualenv
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="01.2.3-Create-new-Virtual-Environment">01.2.3 Create new Virtual Environment<a class="anchor-link" href="#01.2.3-Create-new-Virtual-Environment">&#182;</a></h3><p>Command to create new Virtual Environment:</p>
+
+<pre><code>virtualenv -p &lt;path_to_python_binary_file&gt; &lt;path_to_the_directory_to_set_up_virtual_environment&gt;</code></pre>
+<p>In our case it will be:</p>
+
+<pre><code>virtualenv -p /usr/bin/python3.6 ~/venvs/dstip_venv</code></pre>
+<p>A new Virtual Environment has been created in <code>~/venvs/dstip_venv</code>. To activate it run:</p>
+<div class="highlight"><pre><span></span><span class="nb">source</span> ~/venvs/dstip_venv/bin/activate
+</pre></div>
+<p>In the shell you should see information about Virtual Environment:
+<img src="img/01.png">
+The default <code>python</code> is now:</p>
+<div class="highlight"><pre><span></span>which python
+</pre></div>
+<blockquote><p>/home/lcs123/venvs/dstip_venv/bin/python</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="01.2.4-Clone-the-repository-and-install-requirements">01.2.4 Clone the repository and install requirements<a class="anchor-link" href="#01.2.4-Clone-the-repository-and-install-requirements">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nb">cd</span> some/directory/you/want/to/work
+git clone git@gitlab.com:lukasz_cesarski/dstip.git
+<span class="nb">cd</span> dstip
+ls
+</pre></div>
+<blockquote><p>00_Environment_setup  02_Jupyter_Notebook  04_Numpy       06_Seaborn       README.md<br>
+01_Ipython            03_Pandas            05_Matplotlib  07_scikit_learn</p>
+</blockquote>
+<p><strong>Now you need to care about having the Virtual Environement activated!</strong> Otherwise installed packages will not be working with your Virtual Environement!</p>
+<div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+<p>Other required Linux packages (required to converted jupyter notebook to formats other than HTML, eg. PDF)</p>
+
+<pre><code>sudo apt-get install pandoc
+sudo apt-get install texlive-xetex</code></pre>
+<p>Last thing that needs to be done is to slightly modify Virtual Environment activation file with our project root directory. This is VERY convenient. Assuming your current working directory is <code>dstip</code> root directory you need to run:</p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export PYTHONPATH=`pwd`&quot;</span> &gt;&gt;  &lt;path_to_the_venv_activation_file&gt;
+</pre></div>
+<p>In our case it will be:</p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export PYTHONPATH=`pwd`&quot;</span> &gt;&gt; ~/venvs/dstip_venv/bin/activate
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="01.3-jupyter-notebook-server">01.3 <code>jupyter notebook</code> server<a class="anchor-link" href="#01.3-jupyter-notebook-server">&#182;</a></h2><h3 id="01.3.1-Run-jupyter-notebook-server">01.3.1 Run <code>jupyter notebook</code> server<a class="anchor-link" href="#01.3.1-Run-jupyter-notebook-server">&#182;</a></h3><p>Run:</p>
+<div class="highlight"><pre><span></span>jupyter notebook
+</pre></div>
+<p>You should get something like this:</p>
+
+<pre><code>[I 15:22:54.211 NotebookApp] Serving notebooks from local directory: /home/lcs123/DS/dstip
+[I 15:22:54.211 NotebookApp] The Jupyter Notebook is running at:
+[I 15:22:54.212 NotebookApp] http://localhost:8888/?token=05c9bff078455648dbd73882c837e4f44d7f56471047b354
+[I 15:22:54.212 NotebookApp]  or http://127.0.0.1:8888/?token=05c9bff078455648dbd73882c837e4f44d7f56471047b354
+[I 15:22:54.212 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 15:22:54.218 NotebookApp] 
+
+    To access the notebook, open this file in a browser:
+        file:///home/lcs123/.local/share/jupyter/runtime/nbserver-9481-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=05c9bff078455648dbd73882c837e4f44d7f56471047b354
+     or http://127.0.0.1:8888/?token=05c9bff078455648dbd73882c837e4f44d7f56471047b354</code></pre>
+<p>Follow the instructions and open jupyter notebook in your web browser</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="01.2.5-Stop-jupyter-notebook-server">01.2.5 Stop <code>jupyter notebook</code> server<a class="anchor-link" href="#01.2.5-Stop-jupyter-notebook-server">&#182;</a></h3><p>Console tab with living <code>jupyter notebook</code> should be safe and sound if you want to use it :)</p>
+<p>If you wish to stop <code>jupyter notebook</code> server use <code>CTR+C</code> twice in the tab mentioned above.</p>
+<p>If you wish to deactivate virtual environment use in console:</p>
+<div class="highlight"><pre><span></span>deactivate
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="01.4-Test-environment-setup">01.4 Test environment setup<a class="anchor-link" href="#01.4-Test-environment-setup">&#182;</a></h2><p>Now please <strong>restart Jupyter Notebook and Virtual Environment</strong> and then run the cells below. You should be able to see two big markups that confirm everything went well.</p>
 
 </div>
 </div>
@@ -13136,41 +13283,16 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[  0.   4.   8.  12.  16.  20.  24.  28.  32.  36.  40.  44.  48.  52.
-  56.  60.  64.  68.  72.  76.  80.  84.  88.  92.  96. 100.]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### You can return a markdown as well&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NOTE: wrapping `import` statement in `try, except` block is not a common practice</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;# 3rd Party Pactages Installation Successful!&quot;</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">ModuleNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Installation of packages failed!&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13188,7 +13310,7 @@ div#notebook {
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="You-can-return-a-markdown-as-well">You can return a markdown as well<a class="anchor-link" href="#You-can-return-a-markdown-as-well">&#182;</a></h4>
+<h1 id="3rd-Party-Pactages-Installation-Successful!">3rd Party Pactages Installation Successful!<a class="anchor-link" href="#3rd-Party-Pactages-Installation-Successful!">&#182;</a></h1>
 </div>
 
 </div>
@@ -13196,203 +13318,18 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Other langauges code (eg. HTML) can be executed as well. Below example to turn on/off raw code in Jupyter Notebook</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
-
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
-<span class="s1">code_show=true; </span>
-<span class="s1">function code_toggle() {</span>
-<span class="s1"> if (code_show){</span>
-<span class="s1"> $(&#39;div.input&#39;).hide();</span>
-<span class="s1"> } else {</span>
-<span class="s1"> $(&#39;div.input&#39;).show();</span>
-<span class="s1"> }</span>
-<span class="s1"> code_show = !code_show</span>
-<span class="s1">} </span>
-<span class="s1">$( document ).ready(code_toggle);</span>
-<span class="s1">&lt;/script&gt;</span>
-<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.02-Markdown-cells">01.02.02 Markdown cells<a class="anchor-link" href="#01.02.02-Markdown-cells">&#182;</a></h3><p>Text written in this type of cells will be intepreted as <code>.md</code> file.</p>
-<p>Sample markdown cheat sheet can be found <a href="https://guides.github.com/features/mastering-markdown/">here</a></p>
-<p><strong>Bold text</strong></p>
-<p><em>Italics</em></p>
-<ul>
-<li>[x] TODO1  </li>
-<li>[ ] TODO2  </li>
-<li>[ ] TODO3  </li>
-</ul>
-<table>
-<thead><tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content from cell 1</td>
-<td>Content from cell 2</td>
-</tr>
-<tr>
-<td>Content in the first column</td>
-<td>Content in the second column</td>
-</tr>
-</tbody>
-</table>
-<p>You can use LATEX:
-$$c = \sqrt{a^2 + b^2}$$</p>
-<p>Code can be written as well</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.03-Jupyter-Notebook-menu">01.02.03 Jupyter Notebook menu<a class="anchor-link" href="#01.02.03-Jupyter-Notebook-menu">&#182;</a></h3><p>How to open the console:</p>
-<ol>
-<li>Use <code>New</code> &gt; <code>Terminal</code>
-<img src="img/02.png"></li>
-</ol>
-<p>How to upload new file to the sever (when you work remotely):</p>
-<ol>
-<li>Click <code>Upload</code></li>
-</ol>
-<p>How to download file from the sever (when you work remotely):</p>
-<ol>
-<li>Click <code>File</code> &gt; <code>Download as</code> &gt; <code>notebook.ipnb</code>
-<img src="img/03.png"></li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.04-Useful-Jupyter-Notebook-shortcuts">01.02.04 Useful Jupyter Notebook shortcuts<a class="anchor-link" href="#01.02.04-Useful-Jupyter-Notebook-shortcuts">&#182;</a></h3><p>The Jupyter Notebook has two different keyboard input modes. <code>Edit</code> mode allows you to type code or text into a cell and is indicated by a <strong>green</strong> cell border. <code>Command</code> mode binds the keyboard to notebook level commands and is indicated by a grey cell border with a <strong>blue</strong> left margin.</p>
-<p>When you are in edit mode you can write a code in the cells. To switch to the <code>command</code> mode click <code>ESC</code></p>
-<p>In <code>command</code> mode you can use shortcuts (shortcuts can be Edited in <code>Help</code> &gt; <code>Edit Keyboard Shortcuts</code>:</p>
-<table>
-<thead><tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CTRL</code>+<code>ENTER</code></td>
-<td>run cell</td>
-</tr>
-<tr>
-<td><code>x</code></td>
-<td>Cut cell</td>
-</tr>
-<tr>
-<td><code>c</code></td>
-<td>Copy cell</td>
-</tr>
-<tr>
-<td><code>v</code></td>
-<td>Paste cell</td>
-</tr>
-<tr>
-<td><code>a</code></td>
-<td>Insert empty cell above</td>
-</tr>
-<tr>
-<td><code>b</code></td>
-<td>Insert empty cell below</td>
-</tr>
-<tr>
-<td><code>m</code></td>
-<td>Chenge cell into markdown cell</td>
-</tr>
-<tr>
-<td><code>z</code></td>
-<td>Undo removing cells</td>
-</tr>
-<tr>
-<td>``</td>
-<td>(Custom) Restart kernel</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.05-What-are-the-caveats-Jupyter-users-must-be-particularly-aware-of?">01.02.05 What are the caveats Jupyter users must be particularly aware of?<a class="anchor-link" href="#01.02.05-What-are-the-caveats-Jupyter-users-must-be-particularly-aware-of?">&#182;</a></h3><p>Jupyter Notebook is a great tool with a lot of functionality but when you use all these <em>magic</em> functions and command line tools you need to first test their behaviour to gain some intuition how does it work. In the example below we investigate how does the command line workflow look like:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this is current working directory for this notebook</span>
-<span class="o">!</span>pwd
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">python_path</span> <span class="o">=</span> <span class="o">!</span><span class="nb">echo</span> <span class="nv">$PYTHONPATH</span>
+<span class="k">if</span> <span class="n">python_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;# PYTHONPATH Modified Correctly!&quot;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PYTHONPATH set improperly: PYTHONPATH=&#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">python_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13408,154 +13345,11 @@ $$c = \sqrt{a^2 + b^2}$$</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/DS/dstip/02_Jupyter_Notebook
-</pre>
-</div>
-</div>
 
-</div>
+<div class="output_markdown rendered_html output_subarea ">
+<h1 id="PYTHONPATH-Modified-Correctly!">PYTHONPATH Modified Correctly!<a class="anchor-link" href="#PYTHONPATH-Modified-Correctly!">&#182;</a></h1>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we run the command to chenge working directory, everything seems to be OK</span>
-<span class="o">!</span><span class="nb">cd</span> ../dstip_utils/
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># unfortunately current working directory has not changed</span>
-<span class="o">!</span>pwd
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/DS/dstip/02_Jupyter_Notebook
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can check that working directory is indeed changed but only temporarly </span>
-<span class="o">!</span><span class="nb">cd</span> ../dstip_utils/<span class="p">;</span>pwd
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/DS/dstip/dstip_utils
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in this case what we need is magic command `%cd` </span>
-<span class="c1"># which permanently change the working directory for the notebook</span>
-<span class="o">%</span><span class="k">cd</span> ../dstip_utils/
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/DS/dstip/dstip_utils
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we may notice that the working directory has changed</span>
-<span class="c1"># this condition will continue untill we change it explicite (or restart the IPython kernel)</span>
-<span class="o">!</span>pwd
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/DS/dstip/dstip_utils
-</pre>
-</div>
 </div>
 
 </div>
@@ -13565,50 +13359,8 @@ $$c = \sqrt{a^2 + b^2}$$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.03-Run-notebooks-via-command-line">01.03 Run notebooks via command line<a class="anchor-link" href="#01.03-Run-notebooks-via-command-line">&#182;</a></h2><p>Sometimes it is very helpful to run jupyter notebook via command line. To do this we use <code>nbconvert</code>. Run in the shell</p>
-<div class="highlight"><pre><span></span>jupyter nbconvert --to pdf <span class="s1">&#39;02_01_Jupyter_Notebook.ipynb&#39;</span>
-
-jupyter nbconvert --to html <span class="s1">&#39;02_01_Jupyter_Notebook.ipynb&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.04-When-to-use-Jupyter-Notebook">01.04 When to use Jupyter Notebook<a class="anchor-link" href="#01.04-When-to-use-Jupyter-Notebook">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th>When TO USE</th>
-<th>When NOT TO USE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Making a report (something to send/export/present)</td>
-<td>GIT Version Control is crucial</td>
-</tr>
-<tr>
-<td>Exploring, leaning, prototyping</td>
-<td>Meanwhile developing a lot of python sub-packages</td>
-</tr>
-<tr>
-<td>Executing manually</td>
-<td>Executing via tools (CI) with <em>args</em></td>
-</tr>
-<tr>
-<td>... or making a training</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h2 id="01.5-Jupyter-via-PUTTY">01.5 Jupyter via PUTTY<a class="anchor-link" href="#01.5-Jupyter-via-PUTTY">&#182;</a></h2><p>Sometimes it is very handy to start jupyter notebook on one machine (eg. your PC with Linux) and connect to it form another machine (eg. laptop with Windows). There is a great tutorial about this issue here:<br>
+<a href="https://medium.com/@chrisfotache/how-to-connect-to-your-cloud-hosted-ipython-jupyter-notebook-from-your-local-windows-machine-1426f1dafec2">https://medium.com/@chrisfotache/how-to-connect-to-your-cloud-hosted-ipython-jupyter-notebook-from-your-local-windows-machine-1426f1dafec2</a></p>
 
 </div>
 </div>
