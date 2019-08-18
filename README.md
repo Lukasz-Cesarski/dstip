@@ -11,8 +11,8 @@ August 2019
 00. Environment setup
 01. Ipython
 02. Jupyter Notebook
-03. Pandas
-04. Numpy
+03. Numpy
+04. Pandas
 05. Matplotlib
 06. Seaborn
 07. scikit-learn
