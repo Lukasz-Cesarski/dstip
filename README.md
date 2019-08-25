@@ -22,3 +22,4 @@ Course based on: Jake VanderPlas "Python Data Science Handbook"
 References:
 
 1. https://jakevdp.github.io/PythonDataScienceHandbook/
+2. https://github.com/rougier/matplotlib-cheatsheet

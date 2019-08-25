@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_01_Ipython</title>
+<title>FAQ</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13113,93 +13113,24 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/02.png"></p>
-<h1 id="01.-IPython">01. IPython<a class="anchor-link" href="#01.-IPython">&#182;</a></h1><h2 id="01.01-What-is-IPython?">01.01 What is IPython?<a class="anchor-link" href="#01.01-What-is-IPython?">&#182;</a></h2><h4 id="According-to-the-IPython-Website:-https://ipython.org">According to the IPython Website: <a href="https://ipython.org">https://ipython.org</a><a class="anchor-link" href="#According-to-the-IPython-Website:-https://ipython.org">&#182;</a></h4><p>IPython provides a rich architecture for interactive computing with:</p>
-<ul>
-<li>A powerful interactive shell. <em>(I confirm)</em></li>
-<li>A kernel for Jupyter. <em>(I confirm)</em></li>
-<li>Support for interactive data visualization and use of GUI toolkits. <em>(I confirm)</em></li>
-<li>Flexible, embeddable interpreters to load into your own projects. <em>(I have no experience)</em></li>
-<li>Easy to use, high performance tools for parallel computing. <em>(I have no experience)</em></li>
-</ul>
-<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>IPython (short for Interactive Python) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez’s words, “Tools for the entire lifecycle of research computing.” <strong>If Python is the engine of our data science task, you might think of IPython as the interactive control panel.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Run IPython:
-<img src="img/01.png"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.02-Useful-IPython-tips&amp;tricks">01.02 Useful IPython tips&amp;tricks<a class="anchor-link" href="#01.02-Useful-IPython-tips&amp;tricks">&#182;</a></h2><h3 id="01.02.01-Quick-access-with-?-and-??">01.02.01 Quick access with <code>?</code> and <code>??</code><a class="anchor-link" href="#01.02.01-Quick-access-with-?-and-??">&#182;</a></h3><p>This is a small thing but it is amazing!</p>
-<p>To see documentation</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="err">?</span>
-</pre></div>
-<p>To see source code (better check on 3rd party packages, not Built-in Functions)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="err">??</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.02-IPython-Magic-Commands">01.02.02 IPython Magic Commands<a class="anchor-link" href="#01.02.02-IPython-Magic-Commands">&#182;</a></h3><p>Run the named file inside IPython as a program:</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> meet_us.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello J|o|h|n!
-Hello M|i|k|e!
-Hello E|m|i|l|y!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Measure time with <code>%timeit</code></p>
-
+<h3 id="1.-What-is-the-difference-between-number-of-runs-and-number-of-loops-in-%%timeit-command-output?">1. What is the difference between number of <code>runs</code> and number of <code>loops</code> in <code>%%timeit</code> command output?<a class="anchor-link" href="#1.-What-is-the-difference-between-number-of-runs-and-number-of-loops-in-%%timeit-command-output?">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13208,7 +13139,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> full_sum=sum([k for k in range(10_000)])
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n 10 -r 3
+<span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -13225,7 +13157,7 @@ Hello E|m|i|l|y!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>796 µs ± 172 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>80.7 ms ± 5.86 ms per loop (mean ± std. dev. of 3 runs, 10 loops each)
 </pre>
 </div>
 </div>
@@ -13237,7 +13169,27 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Double percent sign eg. <code>%%timeit</code> means: Apply for the whole cell instead of a single line</p>
+<p>According to <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit">https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit</a> :</p>
+
+<pre><code>-n&lt;N&gt;: execute the given statement &lt;N&gt; times in a loop. If &lt;N&gt; is not
+provided, &lt;N&gt; is determined so as to get sufficient accuracy.
+
+-r&lt;R&gt;: number of repeats &lt;R&gt;, each consisting of &lt;N&gt; loops, and take the
+best result.</code></pre>
+<p>Code will be executed <code>r</code> number of times with <code>n</code> loops in each run eg.</p>
+<div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">-</span><span class="n">r</span> <span class="mi">3</span>
+<span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="n">_000_000</span><span class="p">)])</span>
+</pre></div>
+<p>will execute the code 3*10=30 times</p>
+<p>I don't know real purpose of giving in this case two parameters instead of just one. I guess it is probably to provide good user experience.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-What-is-the-difference-in-NumPy-between-double-fancy-indexing-and-mixed-indexing?">2. What is the difference in NumPy between double fancy indexing and mixed indexing?<a class="anchor-link" href="#2.-What-is-the-difference-in-NumPy-between-double-fancy-indexing-and-mixed-indexing?">&#182;</a></h3><p>Let's consider the example below:</p>
 
 </div>
 </div>
@@ -13247,56 +13199,21 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">col_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>168 µs ± 7.41 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Arguments can be passed to Magic Commands via:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n 5 -r 2
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">array</span>
 </pre></div>
 
     </div>
@@ -13309,33 +13226,30 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>170 µs ± 1.55 µs per loop (mean ± std. dev. of 2 runs, 5 loops each)
-</pre>
-</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.03-Input-and-output-history">01.02.03 Input and output history<a class="anchor-link" href="#01.02.03-Input-and-output-history">&#182;</a></h3><p><code>In</code> and <code>Out</code> variables are set automatically and stores all intput ad output values related with cells</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">In</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># case1 - mixed indexing</span>
+<span class="n">array</span><span class="p">[:,</span> <span class="n">col_indices</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13348,13 +13262,17 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;&#39;, &#34;get_ipython().run_line_magic(&#39;run&#39;, &#39;meet_us.py&#39;)&#34;, &#34;get_ipython().run_line_magic(&#39;timeit&#39;, &#39;full_sum=sum([k for k in range(10_000)])&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;-n 5 -r 2&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#39;print(In)&#39;]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])</pre>
 </div>
+
 </div>
 
 </div>
@@ -13366,21 +13284,52 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># case2 - double fancy indexing</span>
+<span class="n">array</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">col_indices</span><span class="p">]</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 4, 8])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see the difference let's take a little longer indexing:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you need to remember that double fancy indexing </span>
+<span class="c1"># is like a Battleships (or Sea Battle) game</span>
+<span class="c1"># let&#39;s consider the following case:</span>
+<span class="n">array</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13399,7 +13348,7 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>101</pre>
+<pre>array([2, 1, 2, 4, 6, 6, 4, 7])</pre>
 </div>
 
 </div>
@@ -13413,8 +13362,10 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># slicing using `:` or not using anythong in the columns slicing</span>
+<span class="c1"># means `dear numpy - give me everything you got`</span>
+<span class="c1"># which is a slightly different concept</span>
+<span class="n">array</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">:]</span>
 </pre></div>
 
     </div>
@@ -13433,7 +13384,14 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>102</pre>
+<pre>array([[0, 1, 2],
+       [0, 1, 2],
+       [0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8],
+       [6, 7, 8],
+       [3, 4, 5],
+       [6, 7, 8]])</pre>
 </div>
 
 </div>
@@ -13447,8 +13405,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13467,7 +13424,9 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>103</pre>
+<pre>array([[2, 1, 2, 1, 0, 0, 1, 1],
+       [5, 4, 5, 4, 3, 3, 4, 4],
+       [8, 7, 8, 7, 6, 6, 7, 7]])</pre>
 </div>
 
 </div>
@@ -13481,8 +13440,9 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in general fancy indexing sometimes may return slightly different </span>
+<span class="c1"># result than `standard` slicing, look at this:</span>
+<span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># &lt;&lt;&lt;&lt; slicing</span>
 </pre></div>
 
     </div>
@@ -13501,7 +13461,7 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>104</pre>
+<pre>1</pre>
 </div>
 
 </div>
@@ -13515,7 +13475,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array</span><span class="p">[[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#  &lt;&lt;&lt;&lt; fancy indexing</span>
 </pre></div>
 
     </div>
@@ -13528,44 +13488,15 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{7: 101, 8: 102, 9: 103, 10: 104}
-</pre>
-</div>
-</div>
 
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1])</pre>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
-</div>
 </div>
 
 </div>
@@ -13575,17 +13506,31 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pure <code>python</code> allows us to explore returning history with with one underscore <code>_</code>. In <code>IPython</code> we have upt to 3 underscores avaliable</p>
+<h3 id="3.-How-to-divide-NumPy-arrays-along-given-axis?">3. How to divide NumPy arrays along given axis?<a class="anchor-link" href="#3.-How-to-divide-NumPy-arrays-along-given-axis?">&#182;</a></h3><p>The only way I know is to use reshape to provide proper broadcastiong. I don't know any divide-like function with <code>axis</code> parameter.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># numerator</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span> <span class="c1"># denominator</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top</span>
 </pre></div>
 
     </div>
@@ -13598,13 +13543,17 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>104
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])</pre>
 </div>
+
 </div>
 
 </div>
@@ -13616,7 +13565,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bot</span>
 </pre></div>
 
     </div>
@@ -13629,13 +13578,15 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 2, 3])</pre>
 </div>
+
 </div>
 
 </div>
@@ -13647,7 +13598,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first way is to use reshape</span>
+<span class="n">top</span><span class="o">/</span><span class="n">bot</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13660,33 +13612,29 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>102
-</pre>
-</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 0.5       , 0.66666667],
+       [3.        , 2.        , 1.66666667],
+       [6.        , 3.5       , 2.66666667]])</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To surpass output add <code>;</code> at the end of code line</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top</span><span class="o">/</span><span class="n">bot</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13705,7 +13653,9 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>11020</pre>
+<pre>array([[0.        , 1.        , 2.        ],
+       [1.5       , 2.        , 2.5       ],
+       [2.        , 2.33333333, 2.66666667]])</pre>
 </div>
 
 </div>
@@ -13713,34 +13663,56 @@ Hello E|m|i|l|y!
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are many other functions to appply 'division' for NumPy arrays. I don't know any significant difference between them.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">]);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top</span><span class="o">.</span><span class="fm">__truediv__</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 0.5       , 0.66666667],
+       [3.        , 2.        , 1.66666667],
+       [6.        , 3.5       , 2.66666667]])</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.04-Shell-commands">01.02.04 Shell commands<a class="anchor-link" href="#01.02.04-Shell-commands">&#182;</a></h3><p>To run shell command start the line with exclamation mark</p>
+
+</div>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$PATH</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bot</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13753,13 +13725,52 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/venvs/dstip_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 0.5       , 0.66666667],
+       [3.        , 2.        , 1.66666667],
+       [6.        , 3.5       , 2.66666667]])</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bot</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 1.        , 2.        ],
+       [1.5       , 2.        , 2.5       ],
+       [2.        , 2.33333333, 2.66666667]])</pre>
+</div>
+
 </div>
 
 </div>
@@ -13769,53 +13780,25 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can easy combine <code>IPython</code> and <code>shell</code> functionality</p>
+<h3 id="4.-What-does-the-copy-argument-in-pd.Series?">4. What does the <code>copy</code> argument in <code>pd.Series</code>?<a class="anchor-link" href="#4.-What-does-the-copy-argument-in-pd.Series?">&#182;</a></h3><p>Let's consider the following example</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory_content</span> <span class="o">=</span> <span class="o">!</span>ls
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">directory_content</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">directory_content</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;01_01_Ipython.html&#39;, &#39;01_01_Ipython.ipynb&#39;, &#39;img&#39;, &#39;meet_us.py&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">current_working_dir</span> <span class="o">=</span> <span class="o">!</span>pwd
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1"># value of x is changed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># you will see changed value of 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># you will see changed value of 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># you will not notice any change</span>
+            <span class="c1"># because input data was copied (reference no longer exists)!</span>
 </pre></div>
 
     </div>
@@ -13832,8 +13815,9 @@ Hello E|m|i|l|y!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;/home/lcs123/DS/dstip/01_Ipython&#39;]
+<pre>2.0
+2.0
+1.0
 </pre>
 </div>
 </div>
@@ -13841,158 +13825,6 @@ Hello E|m|i|l|y!
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text_to_print</span> <span class="o">=</span> <span class="s2">&quot;Welcome stranger!&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$text_to_print</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>text_to_print<span class="o">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> text_to_print
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>text_to_print
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Other <code>IPython</code> funcionalities like:</p>
-<ul>
-<li>profiling</li>
-<li>debugging</li>
-<li>and many more </li>
-</ul>
-<p>you can find in <a href="../README.md">REF1</a></p>
-<p>If you are REALLY interestd in IPython: <em>Cyrille Rossant: IPython Interactive Computing and Visualization Cookbook - Second Edition</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.05-When-to-use-IPython?">01.02.05 When to use <code>IPython</code>?<a class="anchor-link" href="#01.02.05-When-to-use-IPython?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th>When TO USE</th>
-<th>When NOT TO USE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Interactive computing</td>
-<td>Production level Software Development (you will see no difference)</td>
-</tr>
-<tr>
-<td>Exploring, prototyping, learning</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

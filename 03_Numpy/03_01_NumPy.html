@@ -13183,7 +13183,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>13 ms ± 36.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>8.43 ms ± 1.43 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -13216,7 +13216,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>936 µs ± 1.72 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>852 µs ± 274 ns per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -13540,10 +13540,10 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 7,  7,  1],
-       [ 0,  9,  9],
-       [ 8,  8, -2],
-       [ 6,  1,  4]])</pre>
+<pre>array([[ 0,  3,  9],
+       [ 4,  1,  4],
+       [-1,  8,  1],
+       [ 6,  2,  9]])</pre>
 </div>
 
 </div>
@@ -13576,8 +13576,8 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.42744282, -0.07379139,  1.33833461],
-       [ 0.02105576,  1.08017072, -0.44213589]])</pre>
+<pre>array([[-0.24215608, -1.21688773, -0.46871553],
+       [ 1.3231855 , -0.91441501,  0.18255708]])</pre>
 </div>
 
 </div>
@@ -14518,7 +14518,7 @@ my list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 <span class="n">sliced_array</span> <span class="o">=</span> <span class="n">my_array</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;sliced array: </span><span class="si">{my_array}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">sliced_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;modified sliced array: </span><span class="si">{sliced_list}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;modified sliced array: </span><span class="si">{sliced_array}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my array:&quot;</span><span class="p">,</span> <span class="n">my_array</span><span class="p">)</span>
 </pre></div>
 
@@ -14539,7 +14539,7 @@ my list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 <pre>NUMPY &gt;&gt;&gt;
 my array: [0 1 2 3 4 5 6 7 8 9]
 sliced array: [0 1 2 3 4 5 6 7 8 9]
-modified sliced array: [100, 1, 2, 3, 4]
+modified sliced array: [100   1   2   3   4]
 my array: [100   1   2   3   4   5   6   7   8   9]
 </pre>
 </div>

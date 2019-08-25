@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_01_Ipython</title>
+<title>04_03_Pandas_Data_Frames_2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,48 +13116,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/02.png"></p>
-<h1 id="01.-IPython">01. IPython<a class="anchor-link" href="#01.-IPython">&#182;</a></h1><h2 id="01.01-What-is-IPython?">01.01 What is IPython?<a class="anchor-link" href="#01.01-What-is-IPython?">&#182;</a></h2><h4 id="According-to-the-IPython-Website:-https://ipython.org">According to the IPython Website: <a href="https://ipython.org">https://ipython.org</a><a class="anchor-link" href="#According-to-the-IPython-Website:-https://ipython.org">&#182;</a></h4><p>IPython provides a rich architecture for interactive computing with:</p>
-<ul>
-<li>A powerful interactive shell. <em>(I confirm)</em></li>
-<li>A kernel for Jupyter. <em>(I confirm)</em></li>
-<li>Support for interactive data visualization and use of GUI toolkits. <em>(I confirm)</em></li>
-<li>Flexible, embeddable interpreters to load into your own projects. <em>(I have no experience)</em></li>
-<li>Easy to use, high performance tools for parallel computing. <em>(I have no experience)</em></li>
+<p><img src="img/01.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>Like the Series object discussed in the previous section, the DataFrame can be thought of either as a generalization of a NumPy array, or as a specialization of a Python dictionary.</p>
+<h1 id="03.-Pandas---Data-Frames----chaptel-2">03. Pandas - Data Frames  - chaptel 2<a class="anchor-link" href="#03.-Pandas---Data-Frames----chaptel-2">&#182;</a></h1><h2 id="03.01-Data-Frames---concatenation,-assign">03.01 Data Frames - concatenation, assign<a class="anchor-link" href="#03.01-Data-Frames---concatenation,-assign">&#182;</a></h2><ul>
+<li>First we need to prepare DataFrame with area</li>
 </ul>
-<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>IPython (short for Interactive Python) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez’s words, “Tools for the entire lifecycle of research computing.” <strong>If Python is the engine of our data science task, you might think of IPython as the interactive control panel.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Run IPython:
-<img src="img/01.png"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.02-Useful-IPython-tips&amp;tricks">01.02 Useful IPython tips&amp;tricks<a class="anchor-link" href="#01.02-Useful-IPython-tips&amp;tricks">&#182;</a></h2><h3 id="01.02.01-Quick-access-with-?-and-??">01.02.01 Quick access with <code>?</code> and <code>??</code><a class="anchor-link" href="#01.02.01-Quick-access-with-?-and-??">&#182;</a></h3><p>This is a small thing but it is amazing!</p>
-<p>To see documentation</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="err">?</span>
-</pre></div>
-<p>To see source code (better check on 3rd party packages, not Built-in Functions)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="err">??</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.02-IPython-Magic-Commands">01.02.02 IPython Magic Commands<a class="anchor-link" href="#01.02.02-IPython-Magic-Commands">&#182;</a></h3><p>Run the named file inside IPython as a program:</p>
 
 </div>
 </div>
@@ -13167,48 +13137,25 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> meet_us.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello J|o|h|n!
-Hello M|i|k|e!
-Hello E|m|i|l|y!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Measure time with <code>%timeit</code></p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> full_sum=sum([k for k in range(10_000)])
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first let&#39;s read DataFrame</span>
+<span class="n">df_area</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../92_data/usa_states_area.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">df_area</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;state&quot;</span> <span class="c1"># setting index name as &quot;state&quot;</span>
+<span class="n">df_area</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13221,38 +13168,158 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>796 µs ± 172 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">Total</th>
+      <th colspan="4" halign="left">Land</th>
+      <th colspan="4" halign="left">Water</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Rank</th>
+      <th>sq_mi</th>
+      <th>km2</th>
+      <th>Rank</th>
+      <th>sq_mi</th>
+      <th>km2</th>
+      <th>%</th>
+      <th>Rank</th>
+      <th>sq_mi</th>
+      <th>km2</th>
+      <th>%</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alaska</th>
+      <td>1</td>
+      <td>665384.04</td>
+      <td>1723337</td>
+      <td>1</td>
+      <td>570640.95</td>
+      <td>1477953</td>
+      <td>85.76%</td>
+      <td>1</td>
+      <td>94743.10</td>
+      <td>245384</td>
+      <td>14.24%</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>2</td>
+      <td>268596.46</td>
+      <td>695662</td>
+      <td>2</td>
+      <td>261231.71</td>
+      <td>676587</td>
+      <td>97.26%</td>
+      <td>8</td>
+      <td>7364.75</td>
+      <td>19075</td>
+      <td>2.74%</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>3</td>
+      <td>163696.32</td>
+      <td>423972</td>
+      <td>3</td>
+      <td>155779.22</td>
+      <td>403466</td>
+      <td>95.16%</td>
+      <td>6</td>
+      <td>7915.52</td>
+      <td>20501</td>
+      <td>4.84%</td>
+    </tr>
+    <tr>
+      <th>Montana</th>
+      <td>4</td>
+      <td>147039.71</td>
+      <td>380831</td>
+      <td>4</td>
+      <td>145545.80</td>
+      <td>376962</td>
+      <td>98.98%</td>
+      <td>26</td>
+      <td>1493.91</td>
+      <td>3869</td>
+      <td>1.02%</td>
+    </tr>
+    <tr>
+      <th>New Mexico</th>
+      <td>5</td>
+      <td>121590.30</td>
+      <td>314917</td>
+      <td>5</td>
+      <td>121298.15</td>
+      <td>314161</td>
+      <td>99.76%</td>
+      <td>49</td>
+      <td>292.15</td>
+      <td>757</td>
+      <td>0.24%</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Double percent sign eg. <code>%%timeit</code> means: Apply for the whole cell instead of a single line</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dealing with multiindex is pretty hard</span>
+<span class="c1"># pd.IndexSlice is the thing we are looking for!</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span>
+<span class="n">df_area</span> <span class="o">=</span> <span class="n">df_area</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">[:],</span> <span class="n">idx</span><span class="p">[:,</span> <span class="s1">&#39;km2&#39;</span><span class="p">]]</span>
+<span class="n">df_area</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13265,38 +13332,100 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>168 µs ± 7.41 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Total</th>
+      <th>Land</th>
+      <th>Water</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>km2</th>
+      <th>km2</th>
+      <th>km2</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>695662</td>
+      <td>676587</td>
+      <td>19075</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+    </tr>
+    <tr>
+      <th>Montana</th>
+      <td>380831</td>
+      <td>376962</td>
+      <td>3869</td>
+    </tr>
+    <tr>
+      <th>New Mexico</th>
+      <td>314917</td>
+      <td>314161</td>
+      <td>757</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Arguments can be passed to Magic Commands via:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n 5 -r 2
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now - Let&#39;s flat the columns by passing them directly as a property</span>
+<span class="n">df_area</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">area_type</span><span class="p">,</span><span class="n">unit</span><span class="p">])</span> <span class="k">for</span> <span class="n">area_type</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">df_area</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">df_area</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13309,13 +13438,76 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>170 µs ± 1.55 µs per loop (mean ± std. dev. of 2 runs, 5 loops each)
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>695662</td>
+      <td>676587</td>
+      <td>19075</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+    </tr>
+    <tr>
+      <th>Montana</th>
+      <td>380831</td>
+      <td>376962</td>
+      <td>3869</td>
+    </tr>
+    <tr>
+      <th>New Mexico</th>
+      <td>314917</td>
+      <td>314161</td>
+      <td>757</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13325,7 +13517,9 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.03-Input-and-output-history">01.02.03 Input and output history<a class="anchor-link" href="#01.02.03-Input-and-output-history">&#182;</a></h3><p><code>In</code> and <code>Out</code> variables are set automatically and stores all intput ad output values related with cells</p>
+<ul>
+<li>next we need to get the data with population</li>
+</ul>
 
 </div>
 </div>
@@ -13335,7 +13529,63 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">In</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ser_pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../92_data/usa_states_population.csv&#39;</span><span class="p">,</span> 
+                     <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                     <span class="n">squeeze</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                     <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                     <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">])</span>
+<span class="n">ser_pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Alabama        4833722
+Alaska          735132
+Arizona        6626624
+Arkansas       2959373
+California    38332521
+Name: Population, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Let's stack them together</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can see a pandas warning below</span>
+<span class="c1"># IMPORTANT * pd.concat is much more </span>
+<span class="n">df_density</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_area</span><span class="p">,</span> <span class="n">ser_pop</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_density</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13351,25 +13601,93 @@ Hello E|m|i|l|y!
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;&#39;, &#34;get_ipython().run_line_magic(&#39;run&#39;, &#39;meet_us.py&#39;)&#34;, &#34;get_ipython().run_line_magic(&#39;timeit&#39;, &#39;full_sum=sum([k for k in range(10_000)])&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;-n 5 -r 2&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#39;print(In)&#39;]
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/lcs123/venvs/dstip_venv/lib/python3.6/site-packages/ipykernel_launcher.py:3: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass &#39;sort=False&#39;.
+
+To retain the current behavior and silence the warning, pass &#39;sort=True&#39;.
+
+  This is separate from the ipykernel package so we can avoid doing imports until
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alabama</th>
+      <td>135767</td>
+      <td>131171</td>
+      <td>4597</td>
+      <td>4833722</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+      <td>735132</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>295234</td>
+      <td>294207</td>
+      <td>1026</td>
+      <td>6626624</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>137732</td>
+      <td>134771</td>
+      <td>2961</td>
+      <td>2959373</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+      <td>38332521</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
-</pre></div>
 
-    </div>
 </div>
 </div>
 
@@ -13379,8 +13697,9 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to get rid of it please pass `sort` argument as mentioned in the warning</span>
+<span class="n">df_density</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_area</span><span class="p">,</span> <span class="n">ser_pop</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_density</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13397,9 +13716,70 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>101</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alabama</th>
+      <td>135767</td>
+      <td>131171</td>
+      <td>4597</td>
+      <td>4833722</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+      <td>735132</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>295234</td>
+      <td>294207</td>
+      <td>1026</td>
+      <td>6626624</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>137732</td>
+      <td>134771</td>
+      <td>2961</td>
+      <td>2959373</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+      <td>38332521</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13407,14 +13787,27 @@ Hello E|m|i|l|y!
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Let's add new computation. We are interested in population density.</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to add a column with new data is quite simple</span>
+<span class="c1"># add a new column &quot;Pleople per Total Area&quot;</span>
+<span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;ppl_pT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;Total_km2&#39;</span><span class="p">]</span>
+<span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;ppl_pL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df_density</span><span class="p">[</span><span class="s1">&#39;Land_km2&#39;</span><span class="p">]</span>
+<span class="n">df_density</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13431,9 +13824,82 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>102</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+      <th>Population</th>
+      <th>ppl_pT</th>
+      <th>ppl_pL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alabama</th>
+      <td>135767</td>
+      <td>131171</td>
+      <td>4597</td>
+      <td>4833722</td>
+      <td>35.603070</td>
+      <td>36.850539</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+      <td>735132</td>
+      <td>0.426575</td>
+      <td>0.497399</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>295234</td>
+      <td>294207</td>
+      <td>1026</td>
+      <td>6626624</td>
+      <td>22.445328</td>
+      <td>22.523679</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>137732</td>
+      <td>134771</td>
+      <td>2961</td>
+      <td>2959373</td>
+      <td>21.486459</td>
+      <td>21.958530</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+      <td>38332521</td>
+      <td>90.412860</td>
+      <td>95.008058</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13447,8 +13913,9 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># *IMPORTANT*: `df_density.assign` using we create NEW dataframe</span>
+<span class="n">df_density</span> <span class="o">=</span> <span class="n">df_density</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">ppl_pW</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Water_km2&#39;</span><span class="p">])</span>
+<span class="n">df_density</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13465,9 +13932,88 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>103</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+      <th>Population</th>
+      <th>ppl_pT</th>
+      <th>ppl_pL</th>
+      <th>ppl_pW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alabama</th>
+      <td>135767</td>
+      <td>131171</td>
+      <td>4597</td>
+      <td>4833722</td>
+      <td>35.603070</td>
+      <td>36.850539</td>
+      <td>1051.494888</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+      <td>735132</td>
+      <td>0.426575</td>
+      <td>0.497399</td>
+      <td>2.995843</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>295234</td>
+      <td>294207</td>
+      <td>1026</td>
+      <td>6626624</td>
+      <td>22.445328</td>
+      <td>22.523679</td>
+      <td>6458.697856</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>137732</td>
+      <td>134771</td>
+      <td>2961</td>
+      <td>2959373</td>
+      <td>21.486459</td>
+      <td>21.958530</td>
+      <td>999.450523</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+      <td>38332521</td>
+      <td>90.412860</td>
+      <td>95.008058</td>
+      <td>1869.787864</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13481,8 +14027,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_density</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;ppl_pT&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13499,73 +14044,540 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>104</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total_km2</th>
+      <th>Land_km2</th>
+      <th>Water_km2</th>
+      <th>Population</th>
+      <th>ppl_pT</th>
+      <th>ppl_pL</th>
+      <th>ppl_pW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>New Jersey</th>
+      <td>22591</td>
+      <td>19047</td>
+      <td>3544</td>
+      <td>8899339</td>
+      <td>393.932938</td>
+      <td>467.230482</td>
+      <td>2511.100169</td>
+    </tr>
+    <tr>
+      <th>Rhode Island</th>
+      <td>4001</td>
+      <td>2678</td>
+      <td>1324</td>
+      <td>1051511</td>
+      <td>262.812047</td>
+      <td>392.647872</td>
+      <td>794.192598</td>
+    </tr>
+    <tr>
+      <th>Connecticut</th>
+      <td>14357</td>
+      <td>12542</td>
+      <td>1816</td>
+      <td>3596080</td>
+      <td>250.475726</td>
+      <td>286.723011</td>
+      <td>1980.220264</td>
+    </tr>
+    <tr>
+      <th>Massachusetts</th>
+      <td>27336</td>
+      <td>20202</td>
+      <td>7134</td>
+      <td>6692824</td>
+      <td>244.835528</td>
+      <td>331.295119</td>
+      <td>938.158677</td>
+    </tr>
+    <tr>
+      <th>Maryland</th>
+      <td>32131</td>
+      <td>25142</td>
+      <td>6990</td>
+      <td>5928814</td>
+      <td>184.520059</td>
+      <td>235.813141</td>
+      <td>848.185122</td>
+    </tr>
+    <tr>
+      <th>Delaware</th>
+      <td>6446</td>
+      <td>5047</td>
+      <td>1399</td>
+      <td>925749</td>
+      <td>143.616041</td>
+      <td>183.425599</td>
+      <td>661.721944</td>
+    </tr>
+    <tr>
+      <th>New York</th>
+      <td>141297</td>
+      <td>122057</td>
+      <td>19240</td>
+      <td>19651127</td>
+      <td>139.076746</td>
+      <td>160.999590</td>
+      <td>1021.368347</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>170312</td>
+      <td>138887</td>
+      <td>31424</td>
+      <td>19552860</td>
+      <td>114.806121</td>
+      <td>140.782507</td>
+      <td>622.226960</td>
+    </tr>
+    <tr>
+      <th>Pennsylvania</th>
+      <td>119280</td>
+      <td>115883</td>
+      <td>3397</td>
+      <td>12773801</td>
+      <td>107.090887</td>
+      <td>110.230155</td>
+      <td>3760.318222</td>
+    </tr>
+    <tr>
+      <th>Ohio</th>
+      <td>116098</td>
+      <td>105829</td>
+      <td>10269</td>
+      <td>11570808</td>
+      <td>99.664146</td>
+      <td>109.334946</td>
+      <td>1126.770669</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>423972</td>
+      <td>403466</td>
+      <td>20501</td>
+      <td>38332521</td>
+      <td>90.412860</td>
+      <td>95.008058</td>
+      <td>1869.787864</td>
+    </tr>
+    <tr>
+      <th>Illinois</th>
+      <td>149995</td>
+      <td>143793</td>
+      <td>6202</td>
+      <td>12882135</td>
+      <td>85.883763</td>
+      <td>89.588054</td>
+      <td>2077.093679</td>
+    </tr>
+    <tr>
+      <th>Virginia</th>
+      <td>110787</td>
+      <td>102279</td>
+      <td>8508</td>
+      <td>8260405</td>
+      <td>74.561140</td>
+      <td>80.763451</td>
+      <td>970.898566</td>
+    </tr>
+    <tr>
+      <th>North Carolina</th>
+      <td>139391</td>
+      <td>125920</td>
+      <td>13471</td>
+      <td>9848060</td>
+      <td>70.650616</td>
+      <td>78.208863</td>
+      <td>731.056343</td>
+    </tr>
+    <tr>
+      <th>Indiana</th>
+      <td>94326</td>
+      <td>92789</td>
+      <td>1537</td>
+      <td>6570902</td>
+      <td>69.661620</td>
+      <td>70.815528</td>
+      <td>4275.147690</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>153910</td>
+      <td>148959</td>
+      <td>4951</td>
+      <td>9992167</td>
+      <td>64.922143</td>
+      <td>67.079982</td>
+      <td>2018.211876</td>
+    </tr>
+    <tr>
+      <th>Tennessee</th>
+      <td>109153</td>
+      <td>106798</td>
+      <td>2355</td>
+      <td>6495978</td>
+      <td>59.512592</td>
+      <td>60.824903</td>
+      <td>2758.377070</td>
+    </tr>
+    <tr>
+      <th>South Carolina</th>
+      <td>82933</td>
+      <td>77857</td>
+      <td>5076</td>
+      <td>4774839</td>
+      <td>57.574657</td>
+      <td>61.328320</td>
+      <td>940.669622</td>
+    </tr>
+    <tr>
+      <th>New Hampshire</th>
+      <td>24214</td>
+      <td>23187</td>
+      <td>1027</td>
+      <td>1323459</td>
+      <td>54.656769</td>
+      <td>57.077630</td>
+      <td>1288.665044</td>
+    </tr>
+    <tr>
+      <th>Hawaii</th>
+      <td>28313</td>
+      <td>16635</td>
+      <td>11678</td>
+      <td>1404054</td>
+      <td>49.590435</td>
+      <td>84.403607</td>
+      <td>120.230690</td>
+    </tr>
+    <tr>
+      <th>Kentucky</th>
+      <td>104656</td>
+      <td>102269</td>
+      <td>2387</td>
+      <td>4395295</td>
+      <td>41.997544</td>
+      <td>42.977784</td>
+      <td>1841.346879</td>
+    </tr>
+    <tr>
+      <th>Michigan</th>
+      <td>250487</td>
+      <td>146435</td>
+      <td>104052</td>
+      <td>9895622</td>
+      <td>39.505531</td>
+      <td>67.576891</td>
+      <td>95.102660</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>695662</td>
+      <td>676587</td>
+      <td>19075</td>
+      <td>26448193</td>
+      <td>38.018740</td>
+      <td>39.090602</td>
+      <td>1386.536986</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>184661</td>
+      <td>172119</td>
+      <td>12542</td>
+      <td>6971406</td>
+      <td>37.752454</td>
+      <td>40.503408</td>
+      <td>555.844841</td>
+    </tr>
+    <tr>
+      <th>Alabama</th>
+      <td>135767</td>
+      <td>131171</td>
+      <td>4597</td>
+      <td>4833722</td>
+      <td>35.603070</td>
+      <td>36.850539</td>
+      <td>1051.494888</td>
+    </tr>
+    <tr>
+      <th>Louisiana</th>
+      <td>135659</td>
+      <td>111898</td>
+      <td>23761</td>
+      <td>4625470</td>
+      <td>34.096300</td>
+      <td>41.336485</td>
+      <td>194.666470</td>
+    </tr>
+    <tr>
+      <th>Wisconsin</th>
+      <td>169635</td>
+      <td>140268</td>
+      <td>29367</td>
+      <td>5742713</td>
+      <td>33.853350</td>
+      <td>40.941006</td>
+      <td>195.549869</td>
+    </tr>
+    <tr>
+      <th>Missouri</th>
+      <td>180540</td>
+      <td>178040</td>
+      <td>2501</td>
+      <td>6044171</td>
+      <td>33.478293</td>
+      <td>33.948388</td>
+      <td>2416.701719</td>
+    </tr>
+    <tr>
+      <th>West Virginia</th>
+      <td>62756</td>
+      <td>62259</td>
+      <td>497</td>
+      <td>1854304</td>
+      <td>29.547836</td>
+      <td>29.783710</td>
+      <td>3730.993964</td>
+    </tr>
+    <tr>
+      <th>Vermont</th>
+      <td>24906</td>
+      <td>23871</td>
+      <td>1035</td>
+      <td>626630</td>
+      <td>25.159801</td>
+      <td>26.250681</td>
+      <td>605.439614</td>
+    </tr>
+    <tr>
+      <th>Minnesota</th>
+      <td>225163</td>
+      <td>206232</td>
+      <td>18930</td>
+      <td>5420380</td>
+      <td>24.073138</td>
+      <td>26.282924</td>
+      <td>286.338088</td>
+    </tr>
+    <tr>
+      <th>Mississippi</th>
+      <td>125438</td>
+      <td>121531</td>
+      <td>3907</td>
+      <td>2991207</td>
+      <td>23.846099</td>
+      <td>24.612708</td>
+      <td>765.601996</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>295234</td>
+      <td>294207</td>
+      <td>1026</td>
+      <td>6626624</td>
+      <td>22.445328</td>
+      <td>22.523679</td>
+      <td>6458.697856</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>137732</td>
+      <td>134771</td>
+      <td>2961</td>
+      <td>2959373</td>
+      <td>21.486459</td>
+      <td>21.958530</td>
+      <td>999.450523</td>
+    </tr>
+    <tr>
+      <th>Oklahoma</th>
+      <td>181037</td>
+      <td>177660</td>
+      <td>3377</td>
+      <td>3850568</td>
+      <td>21.269508</td>
+      <td>21.673804</td>
+      <td>1140.233343</td>
+    </tr>
+    <tr>
+      <th>Iowa</th>
+      <td>145746</td>
+      <td>144669</td>
+      <td>1077</td>
+      <td>3090416</td>
+      <td>21.204122</td>
+      <td>21.361978</td>
+      <td>2869.467038</td>
+    </tr>
+    <tr>
+      <th>Colorado</th>
+      <td>269601</td>
+      <td>268431</td>
+      <td>1170</td>
+      <td>5268367</td>
+      <td>19.541348</td>
+      <td>19.626522</td>
+      <td>4502.877778</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>254799</td>
+      <td>248608</td>
+      <td>6191</td>
+      <td>3930065</td>
+      <td>15.424177</td>
+      <td>15.808281</td>
+      <td>634.802940</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>91633</td>
+      <td>79883</td>
+      <td>11750</td>
+      <td>1328302</td>
+      <td>14.495891</td>
+      <td>16.628094</td>
+      <td>113.046979</td>
+    </tr>
+    <tr>
+      <th>Kansas</th>
+      <td>213100</td>
+      <td>211754</td>
+      <td>1346</td>
+      <td>2893957</td>
+      <td>13.580277</td>
+      <td>13.666599</td>
+      <td>2150.042348</td>
+    </tr>
+    <tr>
+      <th>Utah</th>
+      <td>219882</td>
+      <td>212818</td>
+      <td>7064</td>
+      <td>2900872</td>
+      <td>13.192858</td>
+      <td>13.630764</td>
+      <td>410.655719</td>
+    </tr>
+    <tr>
+      <th>Nevada</th>
+      <td>286380</td>
+      <td>284332</td>
+      <td>2048</td>
+      <td>2790136</td>
+      <td>9.742775</td>
+      <td>9.812951</td>
+      <td>1362.371094</td>
+    </tr>
+    <tr>
+      <th>Nebraska</th>
+      <td>200330</td>
+      <td>198974</td>
+      <td>1356</td>
+      <td>1868516</td>
+      <td>9.327190</td>
+      <td>9.390755</td>
+      <td>1377.961652</td>
+    </tr>
+    <tr>
+      <th>Idaho</th>
+      <td>216443</td>
+      <td>214045</td>
+      <td>2398</td>
+      <td>1612136</td>
+      <td>7.448317</td>
+      <td>7.531762</td>
+      <td>672.283570</td>
+    </tr>
+    <tr>
+      <th>New Mexico</th>
+      <td>314917</td>
+      <td>314161</td>
+      <td>757</td>
+      <td>2085287</td>
+      <td>6.621703</td>
+      <td>6.637638</td>
+      <td>2754.672391</td>
+    </tr>
+    <tr>
+      <th>South Dakota</th>
+      <td>199729</td>
+      <td>196350</td>
+      <td>3379</td>
+      <td>844877</td>
+      <td>4.230117</td>
+      <td>4.302913</td>
+      <td>250.037585</td>
+    </tr>
+    <tr>
+      <th>North Dakota</th>
+      <td>183108</td>
+      <td>178711</td>
+      <td>4397</td>
+      <td>723393</td>
+      <td>3.950636</td>
+      <td>4.047837</td>
+      <td>164.519673</td>
+    </tr>
+    <tr>
+      <th>Montana</th>
+      <td>380831</td>
+      <td>376962</td>
+      <td>3869</td>
+      <td>1015165</td>
+      <td>2.665657</td>
+      <td>2.693017</td>
+      <td>262.384337</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>253335</td>
+      <td>251470</td>
+      <td>1864</td>
+      <td>582658</td>
+      <td>2.299951</td>
+      <td>2.317008</td>
+      <td>312.584764</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>1723337</td>
+      <td>1477953</td>
+      <td>245384</td>
+      <td>735132</td>
+      <td>0.426575</td>
+      <td>0.497399</td>
+      <td>2.995843</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{7: 101, 8: 102, 9: 103, 10: 104}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
-</div>
 </div>
 
 </div>
@@ -13575,7 +14587,46 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pure <code>python</code> allows us to explore returning history with with one underscore <code>_</code>. In <code>IPython</code> we have upt to 3 underscores avaliable</p>
+<p><strong>EXCERCISE 04.04</strong></p>
+<ol>
+<li>Find TOP5 states with the most relative particiaption of water in total area?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### YOUR CODE HERE:</span>
+<span class="k">pass</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TO SHOW THE SOLUTION USE LINE BELOW ###</span>
+<span class="c1"># %load ../91_solutions/ex4_4.py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="03.01-Data-Frames---merge,-join">03.01 Data Frames - merge, join<a class="anchor-link" href="#03.01-Data-Frames---merge,-join">&#182;</a></h2><p>Pretty common issue when you are dealing with data is combining them with respect to the particular column. In the case below we need to assign a new column with <code>manager</code> to the DataFrame with employees.</p>
 
 </div>
 </div>
@@ -13585,7 +14636,12 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_empl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;employee&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Jake&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Sue&#39;</span><span class="p">,</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Larry&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;department&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineering&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineering&#39;</span><span class="p">,</span> <span class="s1">&#39;HR&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineering&#39;</span><span class="p">,</span> <span class="s1">&#39;HR&#39;</span><span class="p">]})</span>
+<span class="n">df_manag</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;department_name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineering&#39;</span><span class="p">,</span> <span class="s1">&#39;HR&#39;</span><span class="p">],</span>
+                         <span class="s1">&#39;manager&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s2">&quot;Betty&quot;</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">]})</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_empl</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_manag</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13601,22 +14657,139 @@ Hello E|m|i|l|y!
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>104
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee</th>
+      <th>department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bob</td>
+      <td>Accounting</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jake</td>
+      <td>Engineering</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa</td>
+      <td>Engineering</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sue</td>
+      <td>HR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>John</td>
+      <td>Engineering</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Larry</td>
+      <td>HR</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>department_name</th>
+      <th>manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Accounting</td>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One way to do this (which we already know pertty well) is using concatenation. The difficult part is to take care about proper indexing. Let's have a look...</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_manag_temp_idx</span> <span class="o">=</span> <span class="n">df_manag</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;department_name&#39;</span><span class="p">)</span>
+<span class="n">df_manag_temp_idx</span>
 </pre></div>
 
     </div>
@@ -13629,13 +14802,54 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>manager</th>
+    </tr>
+    <tr>
+      <th>department_name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Accounting</th>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>Engineering</th>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>HR</th>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13647,7 +14861,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_manag_temp_column</span><span class="o">=</span><span class="n">df_manag_temp_idx</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_empl</span><span class="p">[</span><span class="s1">&#39;department&#39;</span><span class="p">]]</span>
+<span class="n">df_manag_temp_column</span>
 </pre></div>
 
     </div>
@@ -13660,33 +14875,79 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>102
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>manager</th>
+    </tr>
+    <tr>
+      <th>department_name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Accounting</th>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>Engineering</th>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>Engineering</th>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>HR</th>
+      <td>Fred</td>
+    </tr>
+    <tr>
+      <th>Engineering</th>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>HR</th>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To surpass output add <code>;</code> at the end of code line</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in this case we had to reset the index, otherwise dataframes won&#39;t concatenate</span>
+<span class="n">df_empl</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">manager</span> <span class="o">=</span> <span class="n">df_manag_temp_column</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13703,26 +14964,74 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>11020</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee</th>
+      <th>department</th>
+      <th>manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bob</td>
+      <td>Accounting</td>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jake</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sue</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>John</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Larry</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">]);</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -13730,17 +15039,21 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.04-Shell-commands">01.02.04 Shell commands<a class="anchor-link" href="#01.02.04-Shell-commands">&#182;</a></h3><p>To run shell command start the line with exclamation mark</p>
+<p>and viola...<br>
+just kidding - this is horrible...<br>
+Forunately there will be no need to suffer anymore. Meet your new friends <code>pd.merge</code> and <code>pd.DataFrame.join</code>!<br>
+Now let's do this with style :)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$PATH</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># MERGE is very intuitive but it leaves two columns in the result dataframe</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_empl</span><span class="p">,</span> <span class="n">df_manag</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;department&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;department_name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13753,13 +15066,180 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/venvs/dstip_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee</th>
+      <th>department</th>
+      <th>department_name</th>
+      <th>manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bob</td>
+      <td>Accounting</td>
+      <td>Accounting</td>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jake</td>
+      <td>Engineering</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa</td>
+      <td>Engineering</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sue</td>
+      <td>HR</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>John</td>
+      <td>Engineering</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Larry</td>
+      <td>HR</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># JOIN is slightly less intuitive but it gives clear result</span>
+<span class="c1"># IMPORTANT - in `join` method we specify join key in the first dataframe (method&#39;s object) using</span>
+<span class="c1"># `on` parameter, the second dataframe index is taken as a key by default!</span>
+<span class="n">df_empl</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_manag</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;department_name&quot;</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;department&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee</th>
+      <th>department</th>
+      <th>manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bob</td>
+      <td>Accounting</td>
+      <td>Chris</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jake</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sue</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>John</td>
+      <td>Engineering</td>
+      <td>Betty</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Larry</td>
+      <td>HR</td>
+      <td>Fred</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -13769,7 +15249,14 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can easy combine <code>IPython</code> and <code>shell</code> functionality</p>
+<p><strong>EXCERCISE 04.05</strong>
+Given the KPI's of some application for:</p>
+<ul>
+<li>different languages </li>
+<li>different releases  </li>
+</ul>
+<p>Please design a tool to compare releases with each other.</p>
+<p>IMPORTANT: this is not well defined task. Try to use your creativity! It would be really great to find some usage for the new learned functions</p>
 
 </div>
 </div>
@@ -13779,43 +15266,115 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory_content</span> <span class="o">=</span> <span class="o">!</span>ls
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">directory_content</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">directory_content</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### DATA ###</span>
+<span class="n">features_index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PL&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;EN&quot;</span><span class="p">,</span> <span class="s2">&quot;IT&quot;</span><span class="p">,</span> <span class="s2">&quot;ES&quot;</span><span class="p">,</span> <span class="s2">&quot;PT&quot;</span><span class="p">,</span> <span class="s2">&quot;RU&quot;</span><span class="p">,</span> <span class="s2">&quot;FR&quot;</span><span class="p">,</span> <span class="s2">&quot;NL&quot;</span><span class="p">,</span> <span class="s2">&quot;GR&quot;</span><span class="p">]</span>
+<span class="n">experiments_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;1.1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0958</span><span class="p">,</span> <span class="mf">0.0653</span><span class="p">,</span> <span class="mf">0.0414</span><span class="p">,</span> <span class="mf">0.9581</span><span class="p">,</span> <span class="mf">0.4818</span><span class="p">,</span> <span class="mf">0.2347</span><span class="p">,</span> <span class="mf">0.6384</span><span class="p">,</span> <span class="mf">0.2423</span><span class="p">,</span> <span class="mf">0.8497</span><span class="p">,</span> <span class="mf">0.0386</span><span class="p">],</span>
+    <span class="s2">&quot;1.2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4689</span><span class="p">,</span> <span class="mf">0.0653</span><span class="p">,</span> <span class="mf">0.0414</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.4818</span><span class="p">,</span> <span class="mf">0.2347</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.2423</span><span class="p">,</span> <span class="mf">0.8497</span><span class="p">,</span> <span class="mf">0.0386</span><span class="p">],</span>
+    <span class="s2">&quot;1.3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4689</span><span class="p">,</span> <span class="mf">0.0653</span><span class="p">,</span> <span class="mf">0.4161</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.4818</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.2423</span><span class="p">,</span> <span class="mf">0.8497</span><span class="p">,</span> <span class="mf">0.0386</span><span class="p">],</span>
+    <span class="s2">&quot;1.4&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4689</span><span class="p">,</span> <span class="mf">0.3330</span><span class="p">,</span> <span class="mf">0.5561</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.4818</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.5629</span><span class="p">,</span> <span class="mf">0.8497</span><span class="p">,</span> <span class="mf">0.3462</span><span class="p">],</span>
+    <span class="s2">&quot;1.5&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4689</span><span class="p">,</span> <span class="mf">0.1910</span><span class="p">,</span> <span class="mf">0.5561</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.7878</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.5629</span><span class="p">,</span> <span class="mf">0.8045</span><span class="p">,</span> <span class="mf">0.4265</span><span class="p">],</span>
+    <span class="s2">&quot;2.0&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7571</span><span class="p">,</span> <span class="mf">0.3330</span><span class="p">,</span> <span class="mf">0.5561</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.8651</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.0458</span><span class="p">,</span> <span class="mf">0.5629</span><span class="p">,</span> <span class="mf">0.8045</span><span class="p">,</span> <span class="mf">0.4265</span><span class="p">],</span>
+    <span class="s2">&quot;2.1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7571</span><span class="p">,</span> <span class="mf">0.3407</span><span class="p">,</span> <span class="mf">0.9218</span><span class="p">,</span> <span class="mf">0.9328</span><span class="p">,</span> <span class="mf">0.8651</span><span class="p">,</span> <span class="mf">0.7263</span><span class="p">,</span> <span class="mf">0.8897</span><span class="p">,</span> <span class="mf">0.5629</span><span class="p">,</span> <span class="mf">0.8897</span><span class="p">,</span> <span class="mf">0.4265</span><span class="p">],</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="SOLUTION-A:-using-pd.DataFrame.apply-method">SOLUTION A: using <code>pd.DataFrame.apply</code> method<a class="anchor-link" href="#SOLUTION-A:-using-pd.DataFrame.apply-method">&#182;</a></h4><p><code>IN</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">df_kpi</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Dataframe</span> <span class="c1"># scroll below to see how does it look like</span>
+<span class="n">target_rel</span> <span class="o">=</span> <span class="s1">&#39;2.0&#39;</span>
+<span class="n">comp_rels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">]</span>
+</pre></div>
+<p><code>OUT</code>:</p>
+<table>
+<thead><tr>
+<th>rel</th>
+<th>1.1</th>
+<th>1.2</th>
+<th>1.3 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PL</td>
+<td>-0.6613</td>
+<td>-0.2882</td>
+<td>-0.2882</td>
+</tr>
+<tr>
+<td>DE</td>
+<td>-0.2677</td>
+<td>-0.2677</td>
+<td>-0.2677</td>
+</tr>
+<tr>
+<td>EN</td>
+<td>-0.5147</td>
+<td>-0.5147</td>
+<td>-0.1400</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>0.0253</td>
+<td>0.0000</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>ES</td>
+<td>-0.3833</td>
+<td>-0.3833</td>
+<td>-0.3833</td>
+</tr>
+<tr>
+<td>PT</td>
+<td>-0.4916</td>
+<td>-0.4916</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>RU</td>
+<td>0.5926</td>
+<td>0.6805</td>
+<td>0.6805</td>
+</tr>
+<tr>
+<td>FR</td>
+<td>-0.3206</td>
+<td>-0.3206</td>
+<td>-0.3206</td>
+</tr>
+<tr>
+<td>NL</td>
+<td>0.0452</td>
+<td>0.0452</td>
+<td>0.0452</td>
+</tr>
+<tr>
+<td>GR</td>
+<td>-0.3879</td>
+<td>-0.3879</td>
+<td>-0.3879</td>
+</tr>
+</tbody>
+</table>
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;01_01_Ipython.html&#39;, &#39;01_01_Ipython.ipynb&#39;, &#39;img&#39;, &#39;meet_us.py&#39;]
-</pre>
 </div>
 </div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">current_working_dir</span> <span class="o">=</span> <span class="o">!</span>pwd
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_kpi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">experiments_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">features_index</span><span class="p">)</span>
+<span class="n">df_kpi</span>
 </pre></div>
 
     </div>
@@ -13828,14 +15387,144 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;/home/lcs123/DS/dstip/01_Ipython&#39;]
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1.1</th>
+      <th>1.2</th>
+      <th>1.3</th>
+      <th>1.4</th>
+      <th>1.5</th>
+      <th>2.0</th>
+      <th>2.1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PL</th>
+      <td>0.0958</td>
+      <td>0.4689</td>
+      <td>0.4689</td>
+      <td>0.4689</td>
+      <td>0.4689</td>
+      <td>0.7571</td>
+      <td>0.7571</td>
+    </tr>
+    <tr>
+      <th>DE</th>
+      <td>0.0653</td>
+      <td>0.0653</td>
+      <td>0.0653</td>
+      <td>0.3330</td>
+      <td>0.1910</td>
+      <td>0.3330</td>
+      <td>0.3407</td>
+    </tr>
+    <tr>
+      <th>EN</th>
+      <td>0.0414</td>
+      <td>0.0414</td>
+      <td>0.4161</td>
+      <td>0.5561</td>
+      <td>0.5561</td>
+      <td>0.5561</td>
+      <td>0.9218</td>
+    </tr>
+    <tr>
+      <th>IT</th>
+      <td>0.9581</td>
+      <td>0.9328</td>
+      <td>0.9328</td>
+      <td>0.9328</td>
+      <td>0.9328</td>
+      <td>0.9328</td>
+      <td>0.9328</td>
+    </tr>
+    <tr>
+      <th>ES</th>
+      <td>0.4818</td>
+      <td>0.4818</td>
+      <td>0.4818</td>
+      <td>0.4818</td>
+      <td>0.7878</td>
+      <td>0.8651</td>
+      <td>0.8651</td>
+    </tr>
+    <tr>
+      <th>PT</th>
+      <td>0.2347</td>
+      <td>0.2347</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+    </tr>
+    <tr>
+      <th>RU</th>
+      <td>0.6384</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.7263</td>
+      <td>0.0458</td>
+      <td>0.8897</td>
+    </tr>
+    <tr>
+      <th>FR</th>
+      <td>0.2423</td>
+      <td>0.2423</td>
+      <td>0.2423</td>
+      <td>0.5629</td>
+      <td>0.5629</td>
+      <td>0.5629</td>
+      <td>0.5629</td>
+    </tr>
+    <tr>
+      <th>NL</th>
+      <td>0.8497</td>
+      <td>0.8497</td>
+      <td>0.8497</td>
+      <td>0.8497</td>
+      <td>0.8045</td>
+      <td>0.8045</td>
+      <td>0.8897</td>
+    </tr>
+    <tr>
+      <th>GR</th>
+      <td>0.0386</td>
+      <td>0.0386</td>
+      <td>0.0386</td>
+      <td>0.3462</td>
+      <td>0.4265</td>
+      <td>0.4265</td>
+      <td>0.4265</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13847,7 +15536,11 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text_to_print</span> <span class="o">=</span> <span class="s2">&quot;Welcome stranger!&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compare_releases</span><span class="p">(</span><span class="n">target_rel</span><span class="p">,</span> <span class="n">comp_rels</span><span class="p">,</span> <span class="n">df_kpi</span><span class="p">):</span>
+    <span class="c1">### YOUR CODE HERE:</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+    <span class="c1">### END YOUR CODE</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 
     </div>
@@ -13860,28 +15553,12 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$text_to_print</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">target_rel</span> <span class="o">=</span> <span class="s1">&#39;2.0&#39;</span>
+<span class="n">comp_rels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">]</span>
+<span class="c1"># compare_releases(target_rel, comp_rels, df_kpi)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13891,7 +15568,99 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>text_to_print<span class="o">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TO SHOW THE SOLUTION USE LINE BELOW ###</span>
+<span class="c1"># %load ../91_solutions/ex4_5a.py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="SOLUTION-B:-using-pd.merge/pd.DataFrame.join-method">SOLUTION B: using <code>pd.merge</code>/<code>pd.DataFrame.join</code> method<a class="anchor-link" href="#SOLUTION-B:-using-pd.merge/pd.DataFrame.join-method">&#182;</a></h4><p><code>IN</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">df_tests</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Dataframe</span> <span class="c1"># scroll below to see how does it look like</span>
+<span class="n">target_rel</span> <span class="o">=</span> <span class="s1">&#39;2.0&#39;</span>
+<span class="n">comp_rels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">]</span>
+</pre></div>
+<p><code>OUT</code>:</p>
+<table>
+<thead><tr>
+<th>col</th>
+<th>release_base</th>
+<th>language</th>
+<th>kpi_base</th>
+<th>release_target</th>
+<th>kpi_target</th>
+<th>difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1.1</td>
+<td>PL</td>
+<td>0.0958</td>
+<td>2.0</td>
+<td>0.7571</td>
+<td>-0.6613</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.1</td>
+<td>DE</td>
+<td>0.0653</td>
+<td>2.0</td>
+<td>0.3330</td>
+<td>-0.2677</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.1</td>
+<td>EN</td>
+<td>0.0414</td>
+<td>2.0</td>
+<td>0.5561</td>
+<td>-0.5147</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.1</td>
+<td>IT</td>
+<td>0.9581</td>
+<td>2.0</td>
+<td>0.9328</td>
+<td>0.0253</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.1</td>
+<td>ES</td>
+<td>0.4818</td>
+<td>2.0</td>
+<td>0.8651</td>
+<td>-0.3833</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">release</span><span class="p">,</span> <span class="n">test_data</span> <span class="ow">in</span> <span class="n">experiments_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">lang_idx</span><span class="p">,</span> <span class="n">lang</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">features_index</span><span class="p">):</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">release</span><span class="p">,</span> <span class="n">lang</span><span class="p">,</span> <span class="n">test_data</span><span class="p">[</span><span class="n">lang_idx</span><span class="p">]))</span>
+        
+<span class="n">df_tests</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;release&quot;</span><span class="p">,</span> <span class="s2">&quot;language&quot;</span><span class="p">,</span> <span class="s2">&quot;kpi&quot;</span><span class="p">])</span>
+<span class="n">df_tests</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13904,13 +15673,70 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>release</th>
+      <th>language</th>
+      <th>kpi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.1</td>
+      <td>PL</td>
+      <td>0.0958</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.1</td>
+      <td>DE</td>
+      <td>0.0653</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.1</td>
+      <td>EN</td>
+      <td>0.0414</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.1</td>
+      <td>IT</td>
+      <td>0.9581</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.1</td>
+      <td>ES</td>
+      <td>0.4818</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13919,80 +15745,62 @@ Hello E|m|i|l|y!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> text_to_print
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compare_tests</span><span class="p">(</span><span class="n">target_rel</span><span class="p">,</span> <span class="n">comp_rels</span><span class="p">,</span> <span class="n">df_tests</span><span class="p">):</span>
+    <span class="c1">### YOUR CODE HERE:</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+    <span class="c1">### END YOUR CODE</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>text_to_print
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">target_rel</span> <span class="o">=</span> <span class="s1">&#39;2.0&#39;</span>
+<span class="n">comp_rels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span> <span class="s1">&#39;1.3&#39;</span><span class="p">]</span>
+<span class="c1"># compare_tests(target_rel, comp_rels, df_tests)</span>
+</pre></div>
 
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Other <code>IPython</code> funcionalities like:</p>
-<ul>
-<li>profiling</li>
-<li>debugging</li>
-<li>and many more </li>
-</ul>
-<p>you can find in <a href="../README.md">REF1</a></p>
-<p>If you are REALLY interestd in IPython: <em>Cyrille Rossant: IPython Interactive Computing and Visualization Cookbook - Second Edition</em></p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TO SHOW THE SOLUTION USE LINE BELOW ###</span>
+<span class="c1"># %load ../91_solutions/ex4_5b.py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.05-When-to-use-IPython?">01.02.05 When to use <code>IPython</code>?<a class="anchor-link" href="#01.02.05-When-to-use-IPython?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th>When TO USE</th>
-<th>When NOT TO USE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Interactive computing</td>
-<td>Production level Software Development (you will see no difference)</td>
-</tr>
-<tr>
-<td>Exploring, prototyping, learning</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
+    </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

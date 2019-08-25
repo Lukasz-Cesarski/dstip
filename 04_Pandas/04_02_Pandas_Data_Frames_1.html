@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_01_Ipython</title>
+<title>04_02_Pandas_Data_Frames_1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,16 +13116,20 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/02.png"></p>
-<h1 id="01.-IPython">01. IPython<a class="anchor-link" href="#01.-IPython">&#182;</a></h1><h2 id="01.01-What-is-IPython?">01.01 What is IPython?<a class="anchor-link" href="#01.01-What-is-IPython?">&#182;</a></h2><h4 id="According-to-the-IPython-Website:-https://ipython.org">According to the IPython Website: <a href="https://ipython.org">https://ipython.org</a><a class="anchor-link" href="#According-to-the-IPython-Website:-https://ipython.org">&#182;</a></h4><p>IPython provides a rich architecture for interactive computing with:</p>
+<p><img src="img/01.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>Like the Series object discussed in the previous section, the DataFrame can be thought of either as a generalization of a NumPy array, or as a specialization of a Python dictionary.</p>
+<h1 id="02.-Pandas---Data-Frames---chaptel-1">02. Pandas - Data Frames - chaptel 1<a class="anchor-link" href="#02.-Pandas---Data-Frames---chaptel-1">&#182;</a></h1><h2 id="02.01-Data-Frames---basics">02.01 Data Frames - basics<a class="anchor-link" href="#02.01-Data-Frames---basics">&#182;</a></h2><p>A Pandas Series is a one-dimensional array of indexed data.</p>
 <ul>
-<li>A powerful interactive shell. <em>(I confirm)</em></li>
-<li>A kernel for Jupyter. <em>(I confirm)</em></li>
-<li>Support for interactive data visualization and use of GUI toolkits. <em>(I confirm)</em></li>
-<li>Flexible, embeddable interpreters to load into your own projects. <em>(I have no experience)</em></li>
-<li>Easy to use, high performance tools for parallel computing. <em>(I have no experience)</em></li>
+<li>Create a <code>Series</code> object</li>
 </ul>
-<h4 id="According-to-REF1-:">According to <a href="../README.md">REF1</a> :<a class="anchor-link" href="#According-to-REF1-:">&#182;</a></h4><p>IPython (short for Interactive Python) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez’s words, “Tools for the entire lifecycle of research computing.” <strong>If Python is the engine of our data science task, you might think of IPython as the interactive control panel.</strong></p>
+<p><img src="img/02.png"></p>
 
 </div>
 </div>
@@ -13133,32 +13137,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run IPython:
-<img src="img/01.png"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="01.02-Useful-IPython-tips&amp;tricks">01.02 Useful IPython tips&amp;tricks<a class="anchor-link" href="#01.02-Useful-IPython-tips&amp;tricks">&#182;</a></h2><h3 id="01.02.01-Quick-access-with-?-and-??">01.02.01 Quick access with <code>?</code> and <code>??</code><a class="anchor-link" href="#01.02.01-Quick-access-with-?-and-??">&#182;</a></h3><p>This is a small thing but it is amazing!</p>
-<p>To see documentation</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="err">?</span>
-</pre></div>
-<p>To see source code (better check on 3rd party packages, not Built-in Functions)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="err">??</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.02-IPython-Magic-Commands">01.02.02 IPython Magic Commands<a class="anchor-link" href="#01.02.02-IPython-Magic-Commands">&#182;</a></h3><p>Run the named file inside IPython as a program:</p>
-
+<h2 id="02.02-Data-Frames---preprocessing">02.02 Data Frames - preprocessing<a class="anchor-link" href="#02.02-Data-Frames---preprocessing">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13167,92 +13146,39 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> meet_us.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello J|o|h|n!
-Hello M|i|k|e!
-Hello E|m|i|l|y!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Measure time with <code>%timeit</code></p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> full_sum=sum([k for k in range(10_000)])
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dataset comes from:</span>
+<span class="c1"># https://www.kaggle.com/rhuebner/human-resources-data-set#core_dataset.csv</span>
+<span class="c1"># reading CSV is one of the most common forms of creating DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../92_data/emplyees.csv&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>796 µs ± 172 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Double percent sign eg. <code>%%timeit</code> means: Apply for the whole cell instead of a single line</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to keep the screen clean we display only the head of dataframe (default is 5 rows)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13265,38 +13191,194 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>168 µs ± 7.41 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Employee Name</th>
+      <th>Employee Number</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>DOB</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>CitizenDesc</th>
+      <th>Hispanic/Latino</th>
+      <th>...</th>
+      <th>Date of Hire</th>
+      <th>Date of Termination</th>
+      <th>Reason For Term</th>
+      <th>Employment Status</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+      <th>Employee Source</th>
+      <th>Performance Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brown, Mia</td>
+      <td>1103024456</td>
+      <td>MA</td>
+      <td>1450</td>
+      <td>11/24/1985</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>US Citizen</td>
+      <td>No</td>
+      <td>...</td>
+      <td>10/27/2008</td>
+      <td>NaN</td>
+      <td>N/A - still employed</td>
+      <td>Active</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>28.50</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Diversity Job Fair</td>
+      <td>Fully Meets</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LaRotonda, William</td>
+      <td>1106026572</td>
+      <td>MA</td>
+      <td>1460</td>
+      <td>4/26/1984</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Divorced</td>
+      <td>US Citizen</td>
+      <td>No</td>
+      <td>...</td>
+      <td>1/6/2014</td>
+      <td>NaN</td>
+      <td>N/A - still employed</td>
+      <td>Active</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>23.00</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Website Banner Ads</td>
+      <td>Fully Meets</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Steans, Tyrone</td>
+      <td>1302053333</td>
+      <td>MA</td>
+      <td>2703</td>
+      <td>9/1/1986</td>
+      <td>31</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>US Citizen</td>
+      <td>No</td>
+      <td>...</td>
+      <td>9/29/2014</td>
+      <td>NaN</td>
+      <td>N/A - still employed</td>
+      <td>Active</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>29.00</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Internet Search</td>
+      <td>Fully Meets</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Howard, Estelle</td>
+      <td>1211050782</td>
+      <td>MA</td>
+      <td>2170</td>
+      <td>9/16/1985</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>US Citizen</td>
+      <td>No</td>
+      <td>...</td>
+      <td>2/16/2015</td>
+      <td>4/15/2015</td>
+      <td>N/A - still employed</td>
+      <td>Active</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>21.50</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Pay Per Click - Google</td>
+      <td>N/A- too early to review</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Singh, Nan</td>
+      <td>1307059817</td>
+      <td>MA</td>
+      <td>2330</td>
+      <td>5/19/1988</td>
+      <td>29</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>US Citizen</td>
+      <td>No</td>
+      <td>...</td>
+      <td>5/1/2015</td>
+      <td>NaN</td>
+      <td>N/A - still employed</td>
+      <td>Active</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>16.56</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Website Banner Ads</td>
+      <td>N/A- too early to review</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Arguments can be passed to Magic Commands via:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n 5 -r 2
-<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">full_sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">full_sum</span> <span class="o">&lt;</span> <span class="mf">10e5</span><span class="p">:</span>
-    <span class="n">full_sum</span> <span class="o">+=</span> <span class="n">k</span>
-    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># investigate shape of dataframe</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of rows (emplyees) = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of columns         = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13313,7 +13395,8 @@ Hello E|m|i|l|y!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>170 µs ± 1.55 µs per loop (mean ± std. dev. of 2 runs, 5 loops each)
+<pre>Number of rows (emplyees) = 301
+Number of columns         = 21
 </pre>
 </div>
 </div>
@@ -13321,21 +13404,14 @@ Hello E|m|i|l|y!
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.03-Input-and-output-history">01.02.03 Input and output history<a class="anchor-link" href="#01.02.03-Input-and-output-history">&#182;</a></h3><p><code>In</code> and <code>Out</code> variables are set automatically and stores all intput ad output values related with cells</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">In</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># columns names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
     </div>
@@ -13348,13 +13424,20 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;&#39;, &#34;get_ipython().run_line_magic(&#39;run&#39;, &#39;meet_us.py&#39;)&#34;, &#34;get_ipython().run_line_magic(&#39;timeit&#39;, &#39;full_sum=sum([k for k in range(10_000)])&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#34;get_ipython().run_cell_magic(&#39;timeit&#39;, &#39;-n 5 -r 2&#39;, &#39;k = 0\\nfull_sum = 0\\nwhile full_sum &lt; 10e5:\\n    full_sum += k\\n    k += 1\\n&#39;)&#34;, &#39;print(In)&#39;]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([&#39;Employee Name&#39;, &#39;Employee Number&#39;, &#39;State&#39;, &#39;Zip&#39;, &#39;DOB&#39;, &#39;Age&#39;, &#39;Sex&#39;,
+       &#39;MaritalDesc&#39;, &#39;CitizenDesc&#39;, &#39;Hispanic/Latino&#39;, &#39;RaceDesc&#39;,
+       &#39;Date of Hire&#39;, &#39;Date of Termination&#39;, &#39;Reason For Term&#39;,
+       &#39;Employment Status&#39;, &#39;Department&#39;, &#39;Position&#39;, &#39;Pay Rate&#39;,
+       &#39;Manager Name&#39;, &#39;Employee Source&#39;, &#39;Performance Score&#39;],
+      dtype=&#39;object&#39;)</pre>
 </div>
+
 </div>
 
 </div>
@@ -13366,10 +13449,52 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display one emplyee</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Employee Name               LaRotonda, William  
+Employee Number                       1106026572
+State                                         MA
+Zip                                         1460
+DOB                                    4/26/1984
+Age                                           33
+Sex                                         Male
+MaritalDesc                             Divorced
+CitizenDesc                           US Citizen
+Hispanic/Latino                               No
+RaceDesc               Black or African American
+Date of Hire                            1/6/2014
+Date of Termination                          NaN
+Reason For Term             N/A - still employed
+Employment Status                         Active
+Department                         Admin Offices
+Position                            Accountant I
+Pay Rate                                      23
+Manager Name                  Brandon R. LeBlanc
+Employee Source               Website Banner Ads
+Performance Score                    Fully Meets
+Name: 1, dtype: object</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13379,8 +13504,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DataFrame.describe() is very useful to get basic intuition about the numerical data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13397,9 +13522,91 @@ Hello E|m|i|l|y!
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>101</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Employee Number</th>
+      <th>Zip</th>
+      <th>Age</th>
+      <th>Pay Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.010000e+02</td>
+      <td>301.00</td>
+      <td>301.00</td>
+      <td>301.00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.205421e+09</td>
+      <td>6705.20</td>
+      <td>38.55</td>
+      <td>30.72</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.826616e+08</td>
+      <td>17167.53</td>
+      <td>8.94</td>
+      <td>15.22</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>6.020003e+08</td>
+      <td>1013.00</td>
+      <td>25.00</td>
+      <td>14.00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.102024e+09</td>
+      <td>1901.00</td>
+      <td>31.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.204033e+09</td>
+      <td>2132.00</td>
+      <td>37.00</td>
+      <td>24.00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.401065e+09</td>
+      <td>2421.00</td>
+      <td>44.00</td>
+      <td>43.00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.988300e+09</td>
+      <td>98052.00</td>
+      <td>67.00</td>
+      <td>80.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13413,8 +13620,11 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># count values of categorical columns</span>
+<span class="k">for</span> <span class="n">c_name</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c_name</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">series</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="c1"># strings are recognized as (O)bjects in pandas</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -13427,13 +13637,415 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt"></div>
 
 
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>102</pre>
+<div class="output_text output_subarea ">
+<pre>Newman, Richard        1
+Carr, Claudia  N       1
+Miller, Ned            1
+Zima, Colleen          1
+Beak, Kimberly         1
+                      ..
+MacLennan, Samuel      1
+Rossetti, Bruno        1
+Knapp, Bradley  J      1
+Kampew, Donysha        1
+Jacobi, Hannah         1
+Name: Employee Name, Length: 301, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>MA    266
+CT      6
+TX      3
+VT      2
+ND      1
+NC      1
+VA      1
+TN      1
+NY      1
+IN      1
+WA      1
+AL      1
+CA      1
+GA      1
+ME      1
+CO      1
+KY      1
+NV      1
+UT      1
+MT      1
+OH      1
+PA      1
+NH      1
+ID      1
+AZ      1
+FL      1
+OR      1
+RI      1
+Name: State, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>9/9/1965      2
+7/7/1984      2
+9/22/1976     2
+8/26/1986     1
+3/18/1987     1
+             ..
+5/22/1977     1
+9/8/1969      1
+1/12/1974     1
+10/11/1981    1
+1/7/1988      1
+Name: DOB, Length: 298, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Female    174
+Male      126
+male        1
+Name: Sex, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Single       127
+Married      119
+Divorced      30
+Separated     14
+widowed       11
+Name: MaritalDesc, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>US Citizen             285
+Eligible NonCitizen     12
+Non-Citizen              4
+Name: CitizenDesc, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>No     271
+Yes     27
+no       2
+yes      1
+Name: Hispanic/Latino, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>White                               190
+Black or African American            54
+Asian                                31
+Two or more races                    18
+Hispanic                              4
+American Indian or Alaska Native      4
+Name: RaceDesc, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>1/10/2011    14
+3/30/2015    12
+1/5/2015     11
+9/29/2014    11
+7/5/2011     10
+             ..
+5/1/2015      1
+2/15/2012     1
+5/11/2016     1
+9/5/2012      1
+8/1/2011      1
+Name: Date of Hire, Length: 93, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>9/26/2011     2
+1/9/2012      2
+4/7/2012      2
+5/1/2016      2
+9/24/2012     2
+             ..
+5/12/2015     1
+9/23/2012     1
+2/25/2014     1
+11/30/2012    1
+2/22/2015     1
+Name: Date of Termination, Length: 93, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>N/A - still employed                188
+Another position                     20
+unhappy                              14
+more money                           11
+N/A - Has not started yet            11
+career change                         9
+hours                                 9
+attendance                            7
+return to school                      5
+relocation out of area                5
+retiring                              4
+military                              4
+performance                           4
+medical issues                        3
+no-call, no-show                      3
+maternity leave - did not return      3
+gross misconduct                      1
+Name: Reason For Term, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Active                    174
+Voluntarily Terminated     88
+Leave of Absence           14
+Terminated for Cause       14
+Future Start               11
+Name: Employment Status, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Production              208
+IT/IS                    41
+Sales                    31
+Software Engineering     10
+Admin Offices            10
+Executive Office          1
+Name: Department, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Production Technician I         136
+Production Technician II         57
+Area Sales Manager               27
+Production Manager               14
+Database Administrator           13
+Network Engineer                  9
+Software Engineer                 9
+Sr. Network Engineer              5
+Sr. DBA                           4
+IT Support                        4
+Sales Manager                     3
+Accountant I                      3
+Administrative Assistant          3
+Shared Services Manager           2
+IT Manager - DB                   2
+Sr. Accountant                    2
+IT Manager - Support              1
+IT Director                       1
+Software Engineering Manager      1
+President &amp; CEO                   1
+Director of Operations            1
+Director of Sales                 1
+IT Manager - Infra                1
+CIO                               1
+Name: Position, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Kelley Spirea         22
+Kissy Sullivan        22
+Elijiah Gray          22
+Michael Albert        22
+Ketsia Liebig         21
+Brannon Miller        21
+David Stanley         21
+Amy Dunn              21
+Webster Butler        21
+Janet King            19
+Simon Roup            17
+John Smith            14
+Peter Monroe          14
+Lynn Daneault         13
+Alex Sweetwater        9
+Brandon R. LeBlanc     7
+Jennifer Zamora        6
+Eric Dougall           4
+Debra Houlihan         3
+Board of Directors     2
+Name: Manager Name, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Employee Referral                         31
+Diversity Job Fair                        29
+Search Engine - Google Bing Yahoo         25
+Monster.com                               24
+Pay Per Click - Google                    21
+Professional Society                      19
+Newspager/Magazine                        18
+MBTA ads                                  17
+Billboard                                 16
+Vendor Referral                           15
+Glassdoor                                 14
+Website Banner Ads                        13
+Word of Mouth                             13
+On-campus Recruiting                      12
+Social Networks - Facebook Twitter etc    11
+Other                                      9
+Internet Search                            6
+Information Session                        4
+Careerbuilder                              1
+On-line Web application                    1
+Pay Per Click                              1
+Company Intranet - Partner                 1
+Name: Employee Source, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>Fully Meets                 172
+N/A- too early to review     37
+90-day meets                 31
+Exceeds                      28
+Needs Improvement            15
+PIP                           9
+Exceptional                   9
+Name: Performance Score, dtype: int64</pre>
 </div>
 
 </div>
@@ -13441,14 +14053,22 @@ Hello E|m|i|l|y!
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="02.03-Data-Frames---add-/-select-data">02.03 Data Frames - add / select data<a class="anchor-link" href="#02.03-Data-Frames---add-/-select-data">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># It is possible to select Columns like properties - Personally I do not recommend this way</span>
+<span class="c1"># imagine you have column named `mean`, then what will happen is you call `DataFrame.mean`?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Age</span>
 </pre></div>
 
     </div>
@@ -13467,7 +14087,18 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>103</pre>
+<pre>0      32
+1      33
+2      31
+3      32
+4      29
+       ..
+296    38
+297    31
+298    34
+299    34
+300    51
+Name: Age, Length: 301, dtype: int64</pre>
 </div>
 
 </div>
@@ -13481,8 +14112,9 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calling column like a python dict is much more intuitive for me</span>
+<span class="c1"># as you may notice it returns a `Series` object</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13501,7 +14133,18 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>104</pre>
+<pre>0      32
+1      33
+2      31
+3      32
+4      29
+       ..
+296    38
+297    31
+298    34
+299    34
+300    51
+Name: Age, Length: 301, dtype: int64</pre>
 </div>
 
 </div>
@@ -13515,7 +14158,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># of course all the tricks from previous tutorial work as well</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13528,13 +14172,54 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{7: 101, 8: 102, 9: 103, 10: 104}
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>31</td>
+      <td>Accountant I</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>30</td>
+      <td>Administrative Assistant</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>30</td>
+      <td>Sr. Accountant</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13546,7 +14231,10 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we select the data we would like to work with</span>
+<span class="n">selected_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Employee Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="s1">&#39;MaritalDesc&#39;</span><span class="p">,</span> <span class="s1">&#39;Department&#39;</span><span class="p">,</span> <span class="s1">&#39;Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Pay Rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Manager Name&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">selected_columns</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13559,13 +14247,100 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Employee Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brown, Mia</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>28.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LaRotonda, William</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Divorced</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>23.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Steans, Tyrone</td>
+      <td>31</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>29.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Howard, Estelle</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>21.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Singh, Nan</td>
+      <td>29</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>16.56</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13575,7 +14350,10 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pure <code>python</code> allows us to explore returning history with with one underscore <code>_</code>. In <code>IPython</code> we have upt to 3 underscores avaliable</p>
+<p><code>pd.Series</code> have <code>str</code> methods to work with strings efficiently, which map strig methods to whole series, moreover the <code>str</code> methods accept regexp patterns as default</p>
+<ul>
+<li>change "male" to "Male"</li>
+</ul>
 
 </div>
 </div>
@@ -13585,7 +14363,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13598,13 +14376,18 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>104
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Female    174
+Male      126
+male        1
+Name: Sex, dtype: int64</pre>
 </div>
+
 </div>
 
 </div>
@@ -13616,28 +14399,11 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># let&#39;s fix the issues with the not capitalized values</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>103
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13647,7 +14413,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Now everything seems to be OK</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13660,13 +14427,17 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>102
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Female    174
+Male      127
+Name: Sex, dtype: int64</pre>
 </div>
+
 </div>
 
 </div>
@@ -13676,7 +14447,9 @@ Hello E|m|i|l|y!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To surpass output add <code>;</code> at the end of code line</p>
+<ul>
+<li>Split column <code>Employee Name</code> into <code>First_Name</code> and <code>Last_Name</code></li>
+</ul>
 
 </div>
 </div>
@@ -13686,7 +14459,12 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first we need to check if every column contains `,` to make shure we can split using this pattern</span>
+<span class="n">mask_comma</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Employee Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># this is the correct way</span>
+<span class="n">df_view</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">mask_comma</span><span class="p">,</span> <span class="s1">&#39;Employee Name&#39;</span><span class="p">]</span>
+<span class="n">df_view</span>
 </pre></div>
 
     </div>
@@ -13705,7 +14483,8 @@ Hello E|m|i|l|y!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>11020</pre>
+<pre>272    Jeremy Prater
+Name: Employee Name, dtype: object</pre>
 </div>
 
 </div>
@@ -13719,69 +14498,66 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">]);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># all we need to do is:</span>
+<span class="n">df_view</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">repl</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>272    Jeremy, Prater
+Name: Employee Name, dtype: object</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.04-Shell-commands">01.02.04 Shell commands<a class="anchor-link" href="#01.02.04-Shell-commands">&#182;</a></h3><p>To run shell command start the line with exclamation mark</p>
+
+</div>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$PATH</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Now care this is tricky part!!!</span>
+
+<span class="c1"># ####### !IMPORTANT! #######</span>
+<span class="c1"># this is WRONG habit do not use &#39;][&#39; when you work with pandas!!! see more here: </span>
+<span class="c1"># https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy</span>
+
+<span class="c1"># this is the WRONG WAY!! </span>
+<span class="c1"># df[~mask_comma][&#39;Employee Name&#39;] = df_view.str.replace(pat = &#39; &#39;, repl = &#39;, &#39;, n=1)</span>
+
+<span class="c1"># this is correct way</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">mask_comma</span><span class="p">,</span> <span class="s1">&#39;Employee Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_view</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">repl</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/lcs123/venvs/dstip_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can easy combine <code>IPython</code> and <code>shell</code> functionality</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory_content</span> <span class="o">=</span> <span class="o">!</span>ls
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">directory_content</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">directory_content</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check if everything went OK</span>
+<span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">mask_comma</span><span class="p">][</span><span class="s1">&#39;Employee Name&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13794,14 +14570,16 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;01_01_Ipython.html&#39;, &#39;01_01_Ipython.ipynb&#39;, &#39;img&#39;, &#39;meet_us.py&#39;]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>272    Jeremy, Prater
+Name: Employee Name, dtype: object</pre>
 </div>
+
 </div>
 
 </div>
@@ -13813,31 +14591,11 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">current_working_dir</span> <span class="o">=</span> <span class="o">!</span>pwd
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">current_working_dir</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we can split the &#39;Employee Name&#39;</span>
+<span class="n">additional_cols</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Employee Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;IPython.utils.text.SList&#39;&gt;
-[&#39;/home/lcs123/DS/dstip/01_Ipython&#39;]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13847,7 +14605,8 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text_to_print</span> <span class="o">=</span> <span class="s2">&quot;Welcome stranger!&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">additional_cols_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;last_name&#39;</span><span class="p">:</span><span class="n">additional_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;first_name&#39;</span><span class="p">:</span><span class="n">additional_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+<span class="n">additional_cols_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;last_name&#39;</span><span class="p">:</span><span class="n">additional_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
 </pre></div>
 
     </div>
@@ -13860,28 +14619,11 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$text_to_print</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Last_Name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">additional_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">additional_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13891,7 +14633,7 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>text_to_print<span class="o">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13904,13 +14646,112 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome stranger!
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Employee Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+      <th>Last_Name</th>
+      <th>First_Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brown, Mia</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>28.50</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Brown</td>
+      <td>Mia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LaRotonda, William</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Divorced</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>23.00</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>LaRotonda</td>
+      <td>William</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Steans, Tyrone</td>
+      <td>31</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>29.00</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Steans</td>
+      <td>Tyrone</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Howard, Estelle</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>21.50</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Howard</td>
+      <td>Estelle</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Singh, Nan</td>
+      <td>29</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>16.56</td>
+      <td>Brandon R. LeBlanc</td>
+      <td>Singh</td>
+      <td>Nan</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13922,7 +14763,10 @@ Hello E|m|i|l|y!
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> text_to_print
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># last thing we need to do is to sort the columns and get rid of old `Employee Name` name</span>
+<span class="n">selected_columns_fln</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last_Name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">selected_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">selected_columns_fln</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13935,71 +14779,1693 @@ Hello E|m|i|l|y!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>text_to_print
-</pre>
-</div>
-</div>
 
-</div>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Other <code>IPython</code> funcionalities like:</p>
-<ul>
-<li>profiling</li>
-<li>debugging</li>
-<li>and many more </li>
-</ul>
-<p>you can find in <a href="../README.md">REF1</a></p>
-<p>If you are REALLY interestd in IPython: <em>Cyrille Rossant: IPython Interactive Computing and Visualization Cookbook - Second Edition</em></p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="01.02.05-When-to-use-IPython?">01.02.05 When to use <code>IPython</code>?<a class="anchor-link" href="#01.02.05-When-to-use-IPython?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th>When TO USE</th>
-<th>When NOT TO USE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Interactive computing</td>
-<td>Production level Software Development (you will see no difference)</td>
-</tr>
-<tr>
-<td>Exploring, prototyping, learning</td>
-<td></td>
-</tr>
-</tbody>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_Name</th>
+      <th>Last_Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mia</td>
+      <td>Brown</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>28.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>William</td>
+      <td>LaRotonda</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Divorced</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>23.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Tyrone</td>
+      <td>Steans</td>
+      <td>31</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>29.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Estelle</td>
+      <td>Howard</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>21.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nan</td>
+      <td>Singh</td>
+      <td>29</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>16.56</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+  </tbody>
 </table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># intersting part is to check if during the splitting</span>
+<span class="c1"># whitespaces was removed from the beginning and end of `First_Name` and `Last_Name` </span>
+<span class="c1"># to check this we will need to use mapping</span>
+<span class="c1"># btw `.apply` is one of the MOST important concepts in this spreadshit</span>
+
+<span class="n">whitespace_check</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s1">&#39;\s&#39;</span><span class="p">))</span>
+<span class="n">whitespace_check</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_Name</th>
+      <th>Last_Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Lets check the scale of the phenomenon</span>
+<span class="n">whitespace_check</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>First_Name    298
+Last_Name       3
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to make sure check what went wrong</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;First_Name&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39; Mia&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># let&#39;s apply the update function</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last_Name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># much more better!</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;First_Name&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Mia&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># let&#39;s check once again</span>
+<span class="n">whitespace_check</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s1">&#39;\s&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="n">whitespace_check</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_Name</th>
+      <th>Last_Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>Leigh Ann</td>
+      <td>Smith</td>
+      <td>30</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>20.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Brandon  R</td>
+      <td>LeBlanc</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Shared Services Manager</td>
+      <td>55.00</td>
+      <td>Janet King</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Karthikeyan</td>
+      <td>Ait Sidi</td>
+      <td>42</td>
+      <td>Male</td>
+      <td>Married</td>
+      <td>IT/IS</td>
+      <td>Sr. DBA</td>
+      <td>62.00</td>
+      <td>Simon Roup</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Claudia  N</td>
+      <td>Carr</td>
+      <td>31</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>IT/IS</td>
+      <td>Sr. DBA</td>
+      <td>61.30</td>
+      <td>Simon Roup</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Webster  L</td>
+      <td>Butler</td>
+      <td>34</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Manager</td>
+      <td>55.00</td>
+      <td>Janet King</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>Courtney  E</td>
+      <td>Wallace</td>
+      <td>62</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Production</td>
+      <td>Production Manager</td>
+      <td>33.50</td>
+      <td>Janet King</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>Wilson  K</td>
+      <td>Adinolfi</td>
+      <td>34</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>20.00</td>
+      <td>Michael Albert</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Francesco  A</td>
+      <td>Barone</td>
+      <td>34</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>16.76</td>
+      <td>Kelley Spirea</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Lowan  M</td>
+      <td>Biden</td>
+      <td>59</td>
+      <td>Female</td>
+      <td>Divorced</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>22.00</td>
+      <td>Ketsia Liebig</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>Donovan  E</td>
+      <td>Chang</td>
+      <td>34</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>22.00</td>
+      <td>Webster Butler</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>Denisa  S</td>
+      <td>Dobrin</td>
+      <td>31</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>16.75</td>
+      <td>David Stanley</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>Bradley  J</td>
+      <td>Knapp</td>
+      <td>40</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>14.00</td>
+      <td>Ketsia Liebig</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Jonathan  R</td>
+      <td>LeBel</td>
+      <td>36</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>15.00</td>
+      <td>Kelley Spirea</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Barbara  M</td>
+      <td>Stanford</td>
+      <td>35</td>
+      <td>Female</td>
+      <td>Divorced</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>14.00</td>
+      <td>Kissy Sullivan</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>Anna</td>
+      <td>Von Massenbach</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician I</td>
+      <td>20.00</td>
+      <td>Michael Albert</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>Michael  J</td>
+      <td>Fitzpatrick</td>
+      <td>36</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician II</td>
+      <td>29.00</td>
+      <td>Amy Dunn</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>Adrienne  J</td>
+      <td>Homberger</td>
+      <td>33</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Production</td>
+      <td>Production Technician II</td>
+      <td>28.00</td>
+      <td>Michael Albert</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Hang  T</td>
+      <td>Wolk</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Production</td>
+      <td>Production Technician II</td>
+      <td>22.00</td>
+      <td>David Stanley</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>Keyla</td>
+      <td>Del Bosque</td>
+      <td>38</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Software Engineering</td>
+      <td>Software Engineer</td>
+      <td>57.12</td>
+      <td>Alex Sweetwater</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now everything seems much more better! Whitespaces in <code>First_Name</code> and <code>Last_Name</code> seems like a reasonable data. We can move forward!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="02.04-Data-Frames---Grouping--(&lt;---meet-your-best-friend!)">02.04 Data Frames - Grouping  (&lt;-- meet your best friend!)<a class="anchor-link" href="#02.04-Data-Frames---Grouping--(&lt;---meet-your-best-friend!)">&#182;</a></h2><p><code>pd.DataFrame.groupby</code></p>
+<p>Groupby according to <a href="../README.md">REF1</a> :</p>
+<p><img src="img/03.png"></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># most basic `groupby` use</span>
+<span class="c1"># let&#39;s check what is the mean `Age` and `Pay Rate` for every `Position`</span>
+<span class="n">simple1_group</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Position&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">simple1_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Pay Rate</th>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Sales Manager</th>
+      <td>29.33</td>
+      <td>56.75</td>
+    </tr>
+    <tr>
+      <th>Administrative Assistant</th>
+      <td>30.33</td>
+      <td>19.52</td>
+    </tr>
+    <tr>
+      <th>IT Manager - Infra</th>
+      <td>31.00</td>
+      <td>63.00</td>
+    </tr>
+    <tr>
+      <th>Accountant I</th>
+      <td>32.00</td>
+      <td>26.83</td>
+    </tr>
+    <tr>
+      <th>Shared Services Manager</th>
+      <td>33.00</td>
+      <td>55.00</td>
+    </tr>
+    <tr>
+      <th>Software Engineer</th>
+      <td>33.67</td>
+      <td>51.07</td>
+    </tr>
+    <tr>
+      <th>Network Engineer</th>
+      <td>33.78</td>
+      <td>39.68</td>
+    </tr>
+    <tr>
+      <th>Sr. Accountant</th>
+      <td>34.00</td>
+      <td>34.95</td>
+    </tr>
+    <tr>
+      <th>Director of Operations</th>
+      <td>34.00</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <th>Database Administrator</th>
+      <td>34.54</td>
+      <td>39.48</td>
+    </tr>
+    <tr>
+      <th>IT Director</th>
+      <td>37.00</td>
+      <td>65.00</td>
+    </tr>
+    <tr>
+      <th>CIO</th>
+      <td>38.00</td>
+      <td>65.00</td>
+    </tr>
+    <tr>
+      <th>Production Technician II</th>
+      <td>38.33</td>
+      <td>25.41</td>
+    </tr>
+    <tr>
+      <th>IT Support</th>
+      <td>38.50</td>
+      <td>28.47</td>
+    </tr>
+    <tr>
+      <th>Production Technician I</th>
+      <td>39.01</td>
+      <td>19.10</td>
+    </tr>
+    <tr>
+      <th>Area Sales Manager</th>
+      <td>39.22</td>
+      <td>55.22</td>
+    </tr>
+    <tr>
+      <th>Production Manager</th>
+      <td>42.36</td>
+      <td>49.68</td>
+    </tr>
+    <tr>
+      <th>Sr. DBA</th>
+      <td>42.50</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <th>Sr. Network Engineer</th>
+      <td>44.40</td>
+      <td>54.46</td>
+    </tr>
+    <tr>
+      <th>IT Manager - Support</th>
+      <td>47.00</td>
+      <td>64.00</td>
+    </tr>
+    <tr>
+      <th>IT Manager - DB</th>
+      <td>49.00</td>
+      <td>41.50</td>
+    </tr>
+    <tr>
+      <th>Director of Sales</th>
+      <td>51.00</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <th>Software Engineering Manager</th>
+      <td>51.00</td>
+      <td>27.00</td>
+    </tr>
+    <tr>
+      <th>President &amp; CEO</th>
+      <td>63.00</td>
+      <td>80.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this is full groupby call: </span>
+
+<span class="c1"># 1) First we pass columns with </span>
+<span class="c1"># 2) Next we pass which columns we wish to select</span>
+<span class="c1"># 3) Finally we pass a dictionary with the aggregation functions</span>
+
+<span class="n">simple2_group</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span><span class="s1">&#39;Department&#39;</span><span class="p">])[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Pay Rate&#39;</span><span class="p">]</span> \
+                <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Age&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="s1">&#39;Pay Rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">simple2_group</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">Age</th>
+      <th>Pay Rate</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>mean</th>
+      <th>count</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>Sex</th>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">Female</th>
+      <th>Admin Offices</th>
+      <td>31.83</td>
+      <td>6</td>
+      <td>7.82</td>
+    </tr>
+    <tr>
+      <th>Executive Office</th>
+      <td>63.00</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>IT/IS</th>
+      <td>38.26</td>
+      <td>19</td>
+      <td>11.98</td>
+    </tr>
+    <tr>
+      <th>Production</th>
+      <td>39.34</td>
+      <td>127</td>
+      <td>7.84</td>
+    </tr>
+    <tr>
+      <th>Sales</th>
+      <td>35.73</td>
+      <td>15</td>
+      <td>1.92</td>
+    </tr>
+    <tr>
+      <th>Software Engineering</th>
+      <td>32.83</td>
+      <td>6</td>
+      <td>4.31</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">Male</th>
+      <th>Admin Offices</th>
+      <td>32.50</td>
+      <td>4</td>
+      <td>16.92</td>
+    </tr>
+    <tr>
+      <th>IT/IS</th>
+      <td>37.41</td>
+      <td>22</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>Production</th>
+      <td>38.53</td>
+      <td>81</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>Sales</th>
+      <td>41.38</td>
+      <td>16</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <th>Software Engineering</th>
+      <td>39.25</td>
+      <td>4</td>
+      <td>11.14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sometimes it is useful to play with the index/column using `stack` and `unstack` methods</span>
+<span class="n">simple2_group</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="4" halign="left">Age</th>
+      <th colspan="2" halign="left">Pay Rate</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">mean</th>
+      <th colspan="2" halign="left">count</th>
+      <th colspan="2" halign="left">std</th>
+    </tr>
+    <tr>
+      <th>Sex</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Admin Offices</th>
+      <td>31.83</td>
+      <td>32.50</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>7.82</td>
+      <td>16.92</td>
+    </tr>
+    <tr>
+      <th>Executive Office</th>
+      <td>63.00</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>IT/IS</th>
+      <td>38.26</td>
+      <td>37.41</td>
+      <td>19.0</td>
+      <td>22.0</td>
+      <td>11.98</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>Production</th>
+      <td>39.34</td>
+      <td>38.53</td>
+      <td>127.0</td>
+      <td>81.0</td>
+      <td>7.84</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>Sales</th>
+      <td>35.73</td>
+      <td>41.38</td>
+      <td>15.0</td>
+      <td>16.0</td>
+      <td>1.92</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <th>Software Engineering</th>
+      <td>32.83</td>
+      <td>39.25</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>4.31</td>
+      <td>11.14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nothing left in columns, so we got the `Series` :)</span>
+<span class="n">simple2_group</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sex     Department                           
+Female  Admin Offices         Age       count      6.00
+                                        mean      31.83
+                              Pay Rate  std        7.82
+        Executive Office      Age       count      1.00
+                                        mean      63.00
+        IT/IS                 Age       count     19.00
+                                        mean      38.26
+                              Pay Rate  std       11.98
+        Production            Age       count    127.00
+                                        mean      39.34
+                              Pay Rate  std        7.84
+        Sales                 Age       count     15.00
+                                        mean      35.73
+                              Pay Rate  std        1.92
+        Software Engineering  Age       count      6.00
+                                        mean      32.83
+                              Pay Rate  std        4.31
+Male    Admin Offices         Age       count      4.00
+                                        mean      32.50
+                              Pay Rate  std       16.92
+        IT/IS                 Age       count     22.00
+                                        mean      37.41
+                              Pay Rate  std       12.99
+        Production            Age       count     81.00
+                                        mean      38.53
+                              Pay Rate  std        9.99
+        Sales                 Age       count     16.00
+                                        mean      41.38
+                              Pay Rate  std        0.47
+        Software Engineering  Age       count      4.00
+                                        mean      39.25
+                              Pay Rate  std       11.14
+dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To gain some more intuition about how <code>groupby</code> actually works we will do one extraordinary example</p>
+<ul>
+<li>Let's find all the employees <code>First_Name</code>s and <code>Last_Name</code>s assigend to every manager</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_Name</th>
+      <th>Last_Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>MaritalDesc</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Pay Rate</th>
+      <th>Manager Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mia</td>
+      <td>Brown</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>28.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>William</td>
+      <td>LaRotonda</td>
+      <td>33</td>
+      <td>Male</td>
+      <td>Divorced</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>23.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Tyrone</td>
+      <td>Steans</td>
+      <td>31</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Accountant I</td>
+      <td>29.00</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Estelle</td>
+      <td>Howard</td>
+      <td>32</td>
+      <td>Female</td>
+      <td>Married</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>21.50</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nan</td>
+      <td>Singh</td>
+      <td>29</td>
+      <td>Female</td>
+      <td>Single</td>
+      <td>Admin Offices</td>
+      <td>Administrative Assistant</td>
+      <td>16.56</td>
+      <td>Brandon R. LeBlanc</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we will pass our own aggregation fucntion</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Manager Name&#39;</span><span class="p">)[[</span><span class="s1">&#39;First_Name&#39;</span><span class="p">,</span><span class="s1">&#39;Last_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_Name</th>
+      <th>Last_Name</th>
+    </tr>
+    <tr>
+      <th>Manager Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alex Sweetwater</th>
+      <td>Colby|Judith|Keyla|Susan|Sandra|Luke|Adell|And...</td>
+      <td>Andreola|Carabbio|Del Bosque|Exantus|Martin|Pa...</td>
+    </tr>
+    <tr>
+      <th>Amy Dunn</th>
+      <td>Linda|Sean|Enola|Carl|Nilson|Evelyn|Kara|Alexa...</td>
+      <td>Anderson|Bernstein|Chivukula|Desimone|Fernande...</td>
+    </tr>
+    <tr>
+      <th>Board of Directors</th>
+      <td>Amy|Janet</td>
+      <td>Foster-Baker|King</td>
+    </tr>
+    <tr>
+      <th>Brandon R. LeBlanc</th>
+      <td>Mia|William|Tyrone|Estelle|Nan|Leigh Ann|Bonalyn</td>
+      <td>Brown|LaRotonda|Steans|Howard|Singh|Smith|Bout...</td>
+    </tr>
+    <tr>
+      <th>Brannon Miller</th>
+      <td>Linda|Helen|Elijian|Lily|Libby|Cayo|Rose|John|...</td>
+      <td>Bachiochi|Billis|Clukey|DiNocco|Fidelia|Gonzal...</td>
+    </tr>
+    <tr>
+      <th>David Stanley</th>
+      <td>Rachael|Donna|James|Denisa  S|Raul|David|Marye...</td>
+      <td>Baczenski|Brill|Cockel|Dobrin|Garcia|Gordon|Ja...</td>
+    </tr>
+    <tr>
+      <th>Debra Houlihan</th>
+      <td>Lynn|Donysha|John</td>
+      <td>Daneault|Kampew|Smith</td>
+    </tr>
+    <tr>
+      <th>Elijiah Gray</th>
+      <td>Trina|Courtney|Lin|Jene'ya|April|Melisa|Ludwic...</td>
+      <td>Alagbe|Beatrice|Chan|Darson|Evensen|Gerke|Harr...</td>
+    </tr>
+    <tr>
+      <th>Eric Dougall</th>
+      <td>Rick|Lisa|Leonara|Julia</td>
+      <td>Clayton|Galia|Lindsay|Soto</td>
+    </tr>
+    <tr>
+      <th>Janet King</th>
+      <td>Brandon  R|Sean|Jennifer|Elisa|Michael|Charles...</td>
+      <td>LeBlanc|Quinn|Zamora|Bramante|Albert|Bozzi|But...</td>
+    </tr>
+    <tr>
+      <th>Jennifer Zamora</th>
+      <td>Jason|Simon|Ricardo|Peter|Eric|Alex</td>
+      <td>Foss|Roup|Ruiz|Monroe|Dougall|Sweetwater</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>Jessica|Michelle|Jenna|Alfred|Gerry|Whitney|Ri...</td>
+      <td>Bunbury|Carter|Dietrich|Digitale|Friedman|Gill...</td>
+    </tr>
+    <tr>
+      <th>Kelley Spirea</th>
+      <td>Francesco  A|Michael|Lisa|Jean|Rex|Barbara|Pau...</td>
+      <td>Barone|Carey|Cornett|Engdahl|England|Gaul|Gros...</td>
+    </tr>
+    <tr>
+      <th>Ketsia Liebig</th>
+      <td>Sam|Lowan  M|Caroline|Geoff|Violeta|Shenice|An...</td>
+      <td>Athwal|Biden|Cierpiszewski|Dickinson|Ferreira|...</td>
+    </tr>
+    <tr>
+      <th>Kissy Sullivan</th>
+      <td>Thomas|Josephine|Spencer|Marianne|Hamish|Roxan...</td>
+      <td>Barbara|Bugali|Cole|Eaton|Garneau|Goyal|Jacobi...</td>
+    </tr>
+    <tr>
+      <th>Lynn Daneault</th>
+      <td>Edward|Latia|Maruk|Myriam|Prater|Bartholemew|J...</td>
+      <td>Buck|Costa|Fraval|Givens|Jeremy|Khemmich|Marti...</td>
+    </tr>
+    <tr>
+      <th>Michael Albert</th>
+      <td>Wilson  K|Nader|Beatrice|Jean|Miguel|Mildred|J...</td>
+      <td>Adinolfi|Barton|Chace|Crimmings|Estremera|Gent...</td>
+    </tr>
+    <tr>
+      <th>Peter Monroe</th>
+      <td>Alejandro|Anthony|Linda|Maria|Carlos|Tanya|Ani...</td>
+      <td>Bacong|Cisco|Dolan|Gonzalez|Merlos|Morway|Shep...</td>
+    </tr>
+    <tr>
+      <th>Simon Roup</th>
+      <td>Renee|Taisha|Daniff|Jayne|Noelle|Thomas|Randal...</td>
+      <td>Becker|Goble|Hernandez|Horton|Johnson|Murray|P...</td>
+    </tr>
+    <tr>
+      <th>Webster Butler</th>
+      <td>Carol|Scott|Donovan  E|James|Susan|Alex|Christ...</td>
+      <td>Anderson|Becker|Chang|DeGweck|Ferguson|Gilles|...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>IMPORTANT</strong>
+<code>pd.DataFrame.groupby</code> can be combined with many other functions except of <code>agg</code>.</p>
+<p>honorable mentsions:</p>
+<ul>
+<li><code>filter</code></li>
+<li><code>transform</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="02.05-Pivot-Tables---when-groupby-is-not-enough">02.05 Pivot Tables - when <code>groupby</code> is not enough<a class="anchor-link" href="#02.05-Pivot-Tables---when-groupby-is-not-enough">&#182;</a></h2><p><code>pd.DataFrame.pivot_table</code></p>
+<p>When you are actually looking for a more powerfull tool than <code>groupby</code> then <code>pivot_table</code> is probably the thing you need.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pay Rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Age</th>
+      <th colspan="2" halign="left">Pay Rate</th>
+    </tr>
+    <tr>
+      <th>Sex</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Admin Offices</th>
+      <td>31.83</td>
+      <td>32.50</td>
+      <td>26.16</td>
+      <td>40.50</td>
+    </tr>
+    <tr>
+      <th>Executive Office</th>
+      <td>63.00</td>
+      <td>NaN</td>
+      <td>80.00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>IT/IS</th>
+      <td>38.26</td>
+      <td>37.41</td>
+      <td>42.54</td>
+      <td>46.74</td>
+    </tr>
+    <tr>
+      <th>Production</th>
+      <td>39.34</td>
+      <td>38.53</td>
+      <td>22.61</td>
+      <td>23.83</td>
+    </tr>
+    <tr>
+      <th>Sales</th>
+      <td>35.73</td>
+      <td>41.38</td>
+      <td>55.68</td>
+      <td>55.38</td>
+    </tr>
+    <tr>
+      <th>Software Engineering</th>
+      <td>32.83</td>
+      <td>39.25</td>
+      <td>52.33</td>
+      <td>43.17</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>EXCERCISE 04.02</strong></p>
+<ol>
+<li><p>Count how many workers are assigned to different <code>Position</code>s in the company using 3 different methods:</p>
+<ul>
+<li>using <code>value_counts</code></li>
+<li>using <code>groupby</code></li>
+<li>using <code>pivot_table</code>*</li>
+</ul>
+<p><code>*</code> - additional (not intuitive, hacky way)</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### YOUR CODE HERE:</span>
+<span class="k">pass</span>
+<span class="c1">### END YOUR CODE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TO SHOW THE SOLUTION USE LINE BELOW ###</span>
+<span class="c1"># %load ../91_solutions/ex4_2.py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>EXCERCISE 04.03</strong></p>
+<ol>
+<li>Count how many workers (groupped by <code>Department</code>) are assigned to every <code>Manager Name</code>?</li>
+</ol>
+<p><strong>IMPORTANT</strong> - mention about <code>NaN</code> vs <code>count</code> interaction!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### YOUR CODE HERE:</span>
+<span class="k">pass</span>
+<span class="c1">### END YOUR CODE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TO SHOW THE SOLUTION USE LINE BELOW ###</span>
+<span class="c1"># %load ../91_solutions/ex4_3.py</span>
 </pre></div>
 
     </div>
