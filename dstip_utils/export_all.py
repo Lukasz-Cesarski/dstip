@@ -12,7 +12,8 @@ def export_all_ipynb(start_path = '.'):
     for format_ in ['html']:
         for dir_path, file_name in dir_name_list:
             subprocess.run(
-                ['jupyter', 'nbconvert', '--to', format_, "--execute", os.path.join(dir_path, file_name)], 
+                ['jupyter', 'nbconvert', '--ExecutePreprocessor.timeout=300', 
+                 '--to', format_, "--execute", os.path.join(dir_path, file_name)], 
                 check=True)
 
 if __name__ == '__main__':
